@@ -1,0 +1,162 @@
+@media(max-width: 1240px) {
+
+    body{
+        grid-template-columns: var(--pageGridColumns1);
+    }
+
+    #buttonFootNotes{
+        display: block;
+    }
+    
+    footer{
+        grid-template-columns: var(--pageGridColumns1);
+    }
+
+    h1{
+        font-size: 2em;
+    }
+
+    h2{
+        font-size: 1.25em;
+    }
+
+    h3,h4,h5{
+        font-size: 1.1em;
+    }
+
+    .unitNFT{
+        width: 1.5em;
+    }
+
+    #footNotesAndAudiobook {
+        position: absolute;
+        width: 80vw;
+        background-image: linear-gradient(30deg, transparent, var(--bg));
+        backdrop-filter: blur(16px);
+        box-shadow: 4px -2px 12px rgba(0,0,0,0.75);
+        height: 100vh;
+        margin-left: 3rem;
+        margin-top: 0;
+        z-index: 5;
+        transform: translateX(-100vw);
+        padding: 0;
+        pointer-events: none;
+        transition: background-image 250ms, transform 550ms;
+    }
+
+    .showBookFootNotes{
+        transform: translateX(0vw) !important;
+        pointer-events: all !important;
+     }
+
+     #audiobookContainer{
+        margin: 0;
+        padding: 1.5em;
+        width: calc(100% - 4em);
+     }
+
+     blockquote {
+        margin-top: 1em;
+        padding: 0em 1.5em;
+     }
+
+    #footNoteTool{
+        display: none;
+    }
+
+    #bookContent {
+        grid-column: 2;
+    }
+
+    #bookTools{
+        grid-column: 2;
+    }
+
+}
+
+@media(max-width: 860px){
+
+    footer{
+        overflow: hidden;
+    }
+
+}
+
+
+
+@media(max-width: 680px){
+    :root{
+        --bookFontSize: 20px !important;
+        --pageGridColumns1: 2em 1fr;
+    }
+
+    .tooltip .definition {
+        font-size: 1.2rem;
+    }
+
+    .img11{
+        width: 90%;
+        margin-left: 5%;
+    }
+
+    #mainNav button span {
+        font-size: 1.25rem;
+      } 
+      
+    button{
+        font-size: 1.5rem;
+    }
+
+    #bookBiggerFontButton, #bookSmallerFontButton{
+        display: none;
+    }
+
+    #secondaryNav{
+        margin-left: 2rem;
+    }
+
+    #bookIndex, #footNotesAndAudiobook{
+        margin-left: 2rem;
+    }
+
+    #bookContent{
+        height: calc(100dvh - 2.5em);
+    }
+
+    #bookTools button:hover::after {
+        display: none !important;
+    }
+
+}
+
+@media(max-width: 550px){
+
+#bookContent{
+    width: calc(100dvw - 2em); 
+    overflow-x: hidden !important;
+ }
+
+ #mainBookText{
+     width: 86dvw;
+     margin-left: 4px !important;
+ }
+
+}
+
+@media(max-width: 500px){
+    #tableContainer{
+        max-width: 314px;
+        overflow-x: scroll;
+    }
+
+    .unitPublishButton{
+        margin-left: 55%;
+    }
+}
+
+@media(max-width: 400px){
+
+    .unitPublishButton{
+        margin-left: 45%;
+    }
+}

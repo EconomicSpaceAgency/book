@@ -1,0 +1,39 @@
+{
+  "name": "ecsa-book-vite",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "@svgr/rollup": "^8.1.0",
+    "assert": "^2.0.0",
+    "browserify-zlib": "^0.2.0",
+    "buffer": "^6.0.3",
+    "crypto-browserify": "^3.12.0",
+    "https-browserify": "^1.0.0",
+    "os-browserify": "^0.3.0",
+    "process": "^0.11.10",
+    "stream-browserify": "^3.0.0",
+    "stream-http": "^3.2.0",
+    "util": "^0.12.5",
+    "vite": "^4.4.5",
+    "vite-plugin-node-polyfills": "^0.12.0",
+    "vite-plugin-static-copy": "^0.17.0",
+    "vite-plugin-svgr": "^4.1.0"
+  },
+  "dependencies": {
+    "@supabase/supabase-js": "^2.33.1",
+    "@web3-onboard/coinbase": "^2.2.6",
+    "@web3-onboard/core": "^2.21.0",
+    "@web3-onboard/injected-wallets": "^2.10.5",
+    "@web3-onboard/magic": "^2.1.7",
+    "@web3-onboard/walletconnect": "^2.4.6",
+    "ethers": "^6.7.1",
+    "font-awesome-animation": "^1.1.1",
+    "magic-sdk": "^19.3.1"
+  }
+}

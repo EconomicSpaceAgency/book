@@ -1,0 +1,26 @@
+:root {
+    --w3o-background-color: #000000;
+    --w3o-foreground-color: #000000;
+    --w3o-text-color: #ffffff;
+    --w3o-border-color: #ffffff;
+    --w3o-action-color: #ffffff;
+    --w3o-border-radius: 2px;
+    --w3o-font-family: 'EB Garamond', serif;
+    --onboard-font-size-1: 3rem;
+    --onboard-font-size-2: 2.25rem;
+    --onboard-font-size-3: 1.5rem;
+    --onboard-font-size-4: 1.25rem;
+    --onboard-font-size-5: 1.3rem;
+    --onboard-font-size-6: 1.2rem;
+    --onboard-font-size-7: 1.2rem;
+    --account-center-position-top: 0px;
+    --account-center-position-bottom: 30px;
+    --account-center-z-index:5;
+    
+}
+.subheading.svelte-obaru3 {
+    display: none;
+}
+#connectedAccount{
+    display:none;
+}

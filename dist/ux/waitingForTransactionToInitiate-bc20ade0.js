@@ -1,0 +1,1 @@
+const n=async function(){const t=document.getElementById("tiersSubmitButton");t&&(t.innerHTML='<i class="fa fa-cog fa-spin"></i>')},i=async function(){const t=document.getElementById("tiersSubmitButton");t&&(t.innerHTML="Co-publish")};export{i as r,n as w};

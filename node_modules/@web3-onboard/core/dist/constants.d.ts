@@ -1,0 +1,8 @@
+import type { AppState } from './types.js';
+export declare const APP_INITIAL_STATE: AppState;
+export declare const STORAGE_KEYS: {
+    TERMS_AGREEMENT: string;
+    LAST_CONNECTED_WALLET: string;
+};
+export declare const MOBILE_WINDOW_WIDTH = 768;
+export declare const BN_PROTECT_RPC_URL = "https://rpc.blocknative.com/protect";

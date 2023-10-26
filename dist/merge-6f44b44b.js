@@ -1,0 +1,1 @@
+import{as as t,at as o,au as m,av as u,aw as g,ax as l}from"./util/tierSubmitSelection-1522f48f.js";function p(){for(var r=[],a=0;a<arguments.length;a++)r[a]=arguments[a];var n=t(r),s=o(r,1/0),e=r;return e.length?e.length===1?u(e[0]):g(s)(l(e,n)):m}export{p as m};

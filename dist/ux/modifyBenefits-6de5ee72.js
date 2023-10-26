@@ -1,0 +1,1 @@
+function i(){let t=document.getElementById("benefit5");t&&(t.style.borderBottom="1px solid");let n=document.getElementById("benefit6");n&&n.remove();let e=document.getElementById("benefit7");e&&(e.textContent=e.textContent.replace("7.","6."))}export{i as m};

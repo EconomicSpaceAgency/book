@@ -1,0 +1,73 @@
+
+@media(max-width: 1800px) {
+
+    body{
+        grid-template-columns: var(--pageGridColumns3);
+    }
+
+    #buttonIndex{
+        display: block;
+    }
+
+    footer{
+        grid-column: 1 / 4;
+        grid-template-columns: var(--pageGridColumns3);
+    }
+
+    h1{
+        font-size: 2.5em;
+    }
+
+    h2{
+        font-size: 1.6em;
+    }
+
+    h3,h4,h5{
+        font-size: 1.2em;
+    }
+
+    #indexTool{
+        display: none;
+    }
+
+    #bookIndex {
+        position: absolute;
+        width: 21vw;
+        min-width: 250px;
+        background-image: linear-gradient(45deg, transparent, var(--bg));
+        backdrop-filter: blur(12px);
+        box-shadow: 4px -2px 12px rgba(0,0,0,0.75);
+        margin-left: 3rem;
+        margin-top: 0;
+        z-index: 6;
+        transform: translateX(-80vw);
+        pointer-events: none;
+    }
+
+    .showBookIndex{
+        transform: translateX(0vw) !important;
+        pointer-events: all !important;
+     }
+
+    #footNotesAndAudiobook {
+        grid-column: 2;
+        width: auto;
+    }
+
+    #footNoteTool {
+        grid-column: 2;
+    }
+
+    #bookContent {
+        grid-column: 3;
+        grid-template-columns: 1fr;
+    }
+
+    #bookTools{
+        grid-column: 3;
+    }
+
+    #mainBookText {
+        grid-column: 1;
+    }
+}
