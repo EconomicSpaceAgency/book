@@ -23,7 +23,6 @@ const handleReservationOperations = async (reservationId, signer) => {
       await setReservationUsed(reservationId, signer);
       let initial = await getReservationByReservationValue(reservationId);
       const newInvitation = await getNextInvitation();
-      console.log('new invitation: ' + newInvitation);
       // let newInvitationModified = `,${newInvitation[0].value}`;
       setInvitationInvitedByReservation(initial[0].id, newInvitation[0].value);
         // let element = document.getElementById(`invitation-link1`);

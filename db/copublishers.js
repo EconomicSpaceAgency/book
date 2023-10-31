@@ -91,7 +91,7 @@ async function updateCopublisher(wallet, name) {
             .eq('wallet', wallet);
 
         if (error) throw error;
-        console.log("updated copublisher successfully", data);
+        // console.log("updated copublisher successfully", data);
         return data ? data[0] : null; // Assuming wallet values are unique, we return the updated result
     } catch (error) {
         console.error("Error updating co-publisher:", error);

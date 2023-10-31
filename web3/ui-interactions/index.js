@@ -72,7 +72,7 @@ const handleTransactionError = (tokenId) => {
     // save tier so we don't have to present it again:
     const selectedTier = document.querySelector('#priceTiers input[type="radio"]:checked');
     if (selectedTier) {
-        console.log('selectedTier, minting again: ', selectedTier.value);
+        // console.log('selectedTier, minting again: ', selectedTier.value);
         localStorage.setItem('chosenPrice', selectedTier.value);
     }
 };

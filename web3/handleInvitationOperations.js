@@ -25,7 +25,7 @@ const handleInvitationOperations = async (invitationId, signer) => {
       await setInvitationUsed(invitationId, `,${signer}`);
       let initial = await getInvitationByInvitationValue(invitationId);
       const newInvitation = await getNextInvitation();
-      console.log('new invitation: ' + newInvitation);
+      // console.log('new invitation: ' + newInvitation);
       // let invitedByInvitationId = `,${newInvitation[0].value}`;
       setInvitationInvitedBy(initial[0].id, newInvitation[0].value);
       localStorage.setItem('invitation', newInvitation[0].value);

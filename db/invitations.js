@@ -12,7 +12,7 @@ async function isInvitationValid(invitationValue) {
             .limit(1);
         
         if (error) throw error;
-                console.log('isInvitationValid', data);
+                // console.log('isInvitationValid', data);
         return data && data.length > 0;
     } catch (error) {
         console.error("Error checking invitation validity:", error);
@@ -47,7 +47,7 @@ async function setInvitationUsed(invitationValue, usedByWallet) {
 
         if (updateResponse.error) throw updateResponse.error;
 
-        console.log('Invitation marked as used.');
+        // console.log('Invitation marked as used.');
     } catch (error) {
         console.error("Error marking invitation as used:", error);
     }
@@ -61,7 +61,7 @@ async function setInvitationInvitedBy(invitedByInvitationId, invitation) {
             .eq('value', invitation);
         
         if (error) throw error;
-        console.log('Invitation marked as ivnited by.');
+        // console.log('Invitation marked as ivnited by.');
     } catch (error) {
         console.error("Error marking invitation as used:", error);
     }
@@ -74,7 +74,7 @@ async function setInvitationInvitedByReservation(invitedByReservationId, invitat
             .eq('value', invitation);
         
         if (error) throw error;
-        console.log('Invitation marked as ivnited by.');
+        // console.log('Invitation marked as ivnited by.');
     } catch (error) {
         console.error("Error marking invitation as used:", error);
     }
@@ -122,7 +122,7 @@ async function getInvitationByInvitationValue(invitationValue) {
             .limit(1);
         
         if (error) throw error;
-        console.log('getInvitationByInvitationValue data response: ', data);
+        // console.log('getInvitationByInvitationValue data response: ', data);
 
         // If data is present and has a length greater than 0, return the first invitation. 
         // Otherwise, return null.
@@ -146,7 +146,7 @@ async function setInvitationsCreatedWithInvitationId(initialInvitationId, referr
         
         if (error) throw error;
 
-        console.log('Invitations set with the invitation ID.');
+        // console.log('Invitations set with the invitation ID.');
     } catch (error) {
         console.error("Error setting invitations with the invitation ID:", error);
     }

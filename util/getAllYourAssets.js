@@ -106,13 +106,13 @@ function getAllYourAssets(){
     
     
                 let dl = document.getElementById('dl');
-                console.log("This happened: ", dl);
+                // console.log("This happened: ", dl);
                 if(tokenId && dl){
                     dl.href = downloadURL;
                 }
     
             if (localStorage.getItem('pbi') == false){
-                console.log('pbi: ', localStorage.getItem('pbi'));
+                // console.log('pbi: ', localStorage.getItem('pbi'));
                 modifyBenefits(); 
             }
             benefitsOverlayContent.style.display = "flex";

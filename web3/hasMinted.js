@@ -829,7 +829,6 @@ const hasMinted = async (address) => {
     const provider = new ethers.AlchemyProvider(VITE_NETWORK, RPC_URL);
     const nftContract = new ethers.Contract(CONTRACT_ADDRESS, contractABI, provider);
     let final = await nftContract.hasMinted(address);
-    console.log('final: ', final);
     return final;
 }
 

@@ -75,7 +75,7 @@ const insertBenefitByIdAndOpenBenefitsOverlay = async function(content) {
             let existingOrder = await getOrderByWallet(wallet);
             let orderUpdateOrPost;
             if(existingOrder){
-                console.log("existing order: ", existingOrder);
+                // console.log("existing order: ", existingOrder);
                 sendButton.textContent = "Update ➹";
                 
                 deliveryName.value = existingOrder.name;
@@ -130,7 +130,7 @@ const insertBenefitByIdAndOpenBenefitsOverlay = async function(content) {
             let copublisherUpdateOrPost;
 
             let existingCopublisher = await getCopublisherByWallet(wallet);
-            console.log("Is it existing copublisher?", existingCopublisher);
+            // console.log("Is it existing copublisher?", existingCopublisher);
             
             if(postPublisherButton){
                 if(existingCopublisher){
@@ -163,7 +163,7 @@ const insertBenefitByIdAndOpenBenefitsOverlay = async function(content) {
                     }
                     else{
                         let copublisherInsertSuccess = await insertCoPublisher(wallet, name);
-                        console.log("copublisherInsertSuccess", copublisherInsertSuccess);
+                        // console.log("copublisherInsertSuccess", copublisherInsertSuccess);
                     }
                 })
             }
@@ -203,7 +203,7 @@ const insertBenefitByIdAndOpenBenefitsOverlay = async function(content) {
         }
 
         if (localStorage.getItem('pbi') == false || localStorage.getItem('alreadyReceivedPhysicalBook' == 'true')){
-            console.log('pbi: ', localStorage.getItem('pbi'));
+            // console.log('pbi: ', localStorage.getItem('pbi'));
             modifyBenefits(); 
         }
         // enter the discourse button
