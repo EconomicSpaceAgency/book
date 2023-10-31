@@ -27,10 +27,10 @@ function getAllYourAssets(){
     <p class="discourse-unit-on-open-sea-text" id="discourse-unit-on-open-sea-text"> Your discourse unit on OpenSea: </p>
     <p class="discourse-unit-on-open-sea-link" id="openSeaLink"> ipfs://QmcHt8YqmA8Vhnfg946kDPRVUfRFo5y7T75nuJPBbXCAMV/token.id </p>
     <p class="discourse-node" id="discourse-node"> Your discourse node invitation link: </p>
-    <p class="discourse-node-link" id="discourse-node-link"> https://discord.gg/DpSb58ZqeS </p>
+    <p class="discourse-node-link" id="discourse-node-link"> https://discord.gg/MWApYu2MR8 </p>
     <p class="invitation-link-text" id="invitation-link-text"> Your invitation link: </p>
     <p class="invitation-link" id="invitation-link1">
-    https://ecsa-book.vercel.app/?invitationId=HWjaYEr24AcMLzdhN4ycnKnhPvtRn4QNJKMuzu4BXexBHm6tsKmCQCUxqBudsxmK
+    https://postcapitalist.agency/?invitationId=HWjaYEr24AcMLzdhN4ycnKnhPvtRn4QNJKMuzu4BXexBHm6tsKmCQCUxqBudsxmK
     </p>
     <p class="unique-pdf-link-text" id="unique-pdf-link-text"> Your unique pdf: </p>
     <p class="unique-pdf-link" id="ipfsBookDownloadLink"> ipfs://QmcHt8YqmA8Vhnfg946kDPRVUfRFo5y7T75nuJPBbXCAMV/token.id </p>
@@ -80,7 +80,6 @@ function getAllYourAssets(){
                 // invitations related
                 let invitationLinkElement = document.getElementById(`invitation-link1`);
                 let invitation = localStorage.getItem('invitation');
-                console.log("invitation: ", invitation);
                 if(invitation && invitationLinkElement){
                     invitationLinkElement.innerHTML = invitation;
                 }

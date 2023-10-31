@@ -1,7 +1,7 @@
 import { openCongratzOverlay } from "./openCongratzOverlay";
 import { blurAndPreventScroll, disableBlurAndEnableScroll } from "./blurAndPreventScrolling.js";
 function closeOpenBenefitAndOpenCongratz() {
-    if (localStorage.getItem('pbi') == false){
+    if (localStorage.getItem('pbi') == 'false'){
         console.log('this should not modify benefits!');
         modifyBenefits(); 
     }

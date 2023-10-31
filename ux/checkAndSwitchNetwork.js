@@ -10,6 +10,7 @@ const checkAndSwitchNetwork = async (provider) => {
     const expectedNetworkIdNumber = VITE_NETWORK == "sepolia" ? VITE_EXPECTED_NETWORK_SEPOLIA_ID_NUMBER: VITE_EXPECTED_NETWORK_POLYGON_NUMBER;
     
     const currentNetworkId = await provider.getNetwork().then(net => net.chainId);
+    console.log('provider.getNetwork, ', currentNetworkId);
 
     if (currentNetworkId !== expectedNetworkIdNumber) {
         try {

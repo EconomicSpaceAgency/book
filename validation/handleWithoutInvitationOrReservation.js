@@ -4,10 +4,10 @@ import { isTokenReserved } from "../web3/isTokenReserved";
 import { mintById } from "../web3/mintById";
 import { hasMinted } from "../web3/hasMinted";
 async function handleWithoutInvitationOrReservation(address, reservationsActive, invitationsActive, tokenId, physicalBookIncluded, choosenPrice) {
-    // let hasMintedR = await hasMinted(address);
-    // if(hasMintedR){
-    //     return "You have already minted an NFT from this collection.";
-    // }
+    let hasMintedR = await hasMinted(address);
+    if(hasMintedR){
+        return "You have already minted an NFT from this collection.";
+    }
     let tokenReserved = await isTokenReserved(tokenId);
     if(tokenReserved){
         if(reservationsActive){

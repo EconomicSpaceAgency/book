@@ -1,5 +1,6 @@
 import { getColonizationLevel } from './getColonizationLevel.js';
 import { getPhysicalBookIncluded } from '../validation/getPhysicalBookIncluded.js';
+import { getPhysicalBookAlreadyReceived } from '../validation/getPhysicalBookAlreadyReceived.js';
 
 let periphery = import.meta.env.VITE_PERIPHERY_PRICE;
 let peripheryBookPrice = import.meta.env.VITE_PERIPHERY_BOOK_PRICE;
@@ -8,29 +9,40 @@ let imperialCoreBookPrice = import.meta.env.VITE_IMPERIAL_CORE_BOOK_PRICE;
 
 function calculateRevealPrice(){
 
-    disableSlider();
-    disableCheckbox();
-    let colonisationLevel = getColonizationLevel();
-    let bookSelected = getPhysicalBookIncluded();
     let finalPrice;
+    let isPhysicalBookAlreadyReceived = getPhysicalBookAlreadyReceived();
 
-    if(bookSelected){
-        if(colonisationLevel >= 50){
-            finalPrice = Number(imperialCorePrice) + Number(imperialCoreBookPrice);
-        }
-        else{
-            let finalPriceBeforeRounding = Number(periphery) + Number(peripheryBookPrice);
-            finalPrice = Number(finalPriceBeforeRounding.toFixed(4));
-        }
+    if(isPhysicalBookAlreadyReceived){
+        disableSlider();
+        disablePhysicalBookCheckbox();
+        disableAlreadyReceivedPhysicalBookCheckbox();
+        localStorage.setItem('pbi', false);
+        let finalPriceBeforeRounding = Number(periphery) + Number(peripheryBookPrice);
+        finalPrice = Number(finalPriceBeforeRounding.toFixed(4));
     }
     else{
-        if(colonisationLevel >= 50){
-            finalPrice = imperialCorePrice;
+        let colonisationLevel = getColonizationLevel();
+        let bookSelected = getPhysicalBookIncluded();
+
+        if(bookSelected){
+            if(colonisationLevel >= 50){
+                finalPrice = Number(imperialCorePrice) + Number(imperialCoreBookPrice);
+            }
+            else{
+                let finalPriceBeforeRounding = Number(periphery) + Number(peripheryBookPrice);
+                finalPrice = Number(finalPriceBeforeRounding.toFixed(4));
+            }
         }
         else{
-            finalPrice = periphery;
+            if(colonisationLevel >= 50){
+                finalPrice = imperialCorePrice;
+            }
+            else{
+                finalPrice = periphery;
+            }
         }
     }
+
     return finalPrice;
 
 }
@@ -64,7 +76,9 @@ function replaceRevealPriceButtonWithActualPrice(revealedPrice){
     let revealPriceButton = document.getElementById('revealPriceButton');
     if(revealPriceDiv){
         if(revealPriceButton){
-            revealPriceButton.innerHTML = `Price: ${revealedPrice} ETH`;
+            revealPriceButton.className = 'revealedPrice';
+            revealPriceButton.innerHTML = `Price: ${revealedPrice} Matic`;
+            localStorage.setItem('priceRevealed', true);
         }
     }
 }
@@ -87,15 +101,31 @@ function enableSlider(){
         slider.disabled = false;
     }
 }
-function disableCheckbox(){
+function disablePhysicalBookCheckbox(){
     const checkbox = document.getElementById('physicalBookCheckbox');
     if(checkbox){
         checkbox.disabled = true;
     }
 }
 
-function enableCheckbox(){
+function enablePhysicalBookCheckbox(){
     const checkbox = document.getElementById('physicalBookCheckbox');
+    if(checkbox){
+        checkbox.disabled = false;
+    }
+}
+
+// already received
+
+function disableAlreadyReceivedPhysicalBookCheckbox(){
+    const checkbox = document.getElementById('alreadyReceivedPhysicalBookCheckbox');
+    if(checkbox){
+        checkbox.disabled = true;
+    }
+}
+
+function enableAlreadyReceivedPhysicalBookCheckbox(){
+    const checkbox = document.getElementById('alreadyReceivedPhysicalBookCheckbox');
     if(checkbox){
         checkbox.disabled = false;
     }
@@ -107,4 +137,4 @@ function revealPrice(){
 }
 
 window.revealPrice = revealPrice;
-export {revealPrice, getFinalPrice, enableSlider, enableCheckbox, replaceRevealPriceButtonWithActualPriceReverse};
+export {revealPrice, getFinalPrice, enableSlider, enablePhysicalBookCheckbox, enableAlreadyReceivedPhysicalBookCheckbox, disableAlreadyReceivedPhysicalBookCheckbox, replaceRevealPriceButtonWithActualPriceReverse};

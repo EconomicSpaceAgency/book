@@ -5,6 +5,7 @@ import { getAllYourAssets } from "../util/getAllYourAssets";
 import { blurAndPreventScroll, disableBlurAndEnableScroll } from "../ux/blurAndPreventScrolling.js";
 import { displayCopublishers } from '../ux/displayCopublishers';
 import { closeSubmenus } from '../ux/closeSubmenus.js';
+import { setEconomicMediaGlowListeners } from "../ux/economicMediaGlow.js";
 
 
 function initiateListeners(){
@@ -234,4 +235,4 @@ function toggleFullScreen() {
     }
 }
 
-  
+setEconomicMediaGlowListeners();

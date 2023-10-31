@@ -15,11 +15,11 @@
         <button id="aboutOverlayClose" class="close-btn" style="display:block">X</button>
         <!-- aboutContent1 -->
         <div class="aboutContent" id="aboutContent1" style="display: block;">
-            Welcome to <b>'Protocols for Postcapitalist Expression'.</b><br>
+            <b>Welcome to 'Protocols for Postcapitalist Expression'.</b><br>
             <br>
             Co-publishing is a new format for economic media that lets you take part in the publishing process. This book is divided into collectible paragraphs which visitors can individually choose to co-publish through a symbolic financial contribution. <br>
             <br>
-            At the beginning, all content is obscured. Through your participation, this text will gradually be made public, one unit at a time. <br>
+            <i>At the beginning, all content is obscured. Through your participation, this text will gradually be made public, one unit at a time.</i> <br>
             <br>
             <button class="aboutOverlayNext" id="aboutOverlayNext1">next →</button>
         </div>
@@ -27,16 +27,16 @@
         <div class="aboutContent" id="aboutContent2" style="display: none;">
             <b>Instructions</b><br>
             <br>
-            By clicking the <img src="imgs/orb-icon-small.png" alt="economic media button" style="width: 24px;height: 24px;"> button at the bottom of the screen, you can turn on the Economic Media mode and select the unit you would like to publish.   
+            When browsing through the book, you will encounter blurred units of text, which signal they are available for co-publishing.
             <br>
             <br>
-            When browsing through the book, you will encounter blurred units of text, which signal they are available for co-publishing. Click the “publish unit” button at the end of each unit, and follow the instructions from there. 
+            By clicking the <img src="imgs/orb-icon-small.png" alt="economic media button" style="width: 24px;height: 24px;"> button at the bottom of the screen, you can turn on the Economic Media mode and select the unit you would like to publish. Click the “publish unit” button at the end of each unit, and follow the instructions from there. 
             <br>
             <br>
-            You can return to these instructions at any time at the `About` section in the sidebar menu on the left.
+            You can return to these instructions at any time by clicking the "instructions" section in the 'About' navigation menu on the left.
             <br>
             <br>
-            Notice, that in order to publish a unit, you will need an invitation.
+            <i>Notice, that in order to publish a unit, you will need an invitation, and some Matic in your wallet.</i>
             <br>
             <br>
             <a href="https://economic-space-agency.gitbook.io/about-co-publishing-units-of-discourse/faq#invites" target="_blank">How to get an invitation?</a>
@@ -52,38 +52,38 @@
         <div class="aboutContent" id="aboutContent3" style="display: none;">
             <b>Benefits</b><br>
             <br>
-            By acquiring a unit of this text you join a discursive community reflecting upon agency, finance and sociality in the new economic space. 
+            By acquiring a unit of this book you join a discursive community reflecting upon agency, finance and sociality in the new economic space. 
             <br>
             <br>
             In addition, acquiring the unit grants you the following rights <a href="https://economic-space-agency.gitbook.io/about-co-publishing-units-of-discourse/capabilities-and-rights" target="_blank">( in detail see here ) : </a> 
             <br>
             <br>
-            1. Creditation as a co-publisher
+            <i>1. Creditation as a co-publisher</i>
             <br>
             Contributors will be listed as co-publishers at the book website.
             <br>
             <br>
-            2. Access to the ECSA token multistake whitelist
+            <i>2. Access to the ECSA token multistake whitelist</i>
             <br>
             By holding a unit, you will have access to the ECSA token whitelist.
             <br>
             <br>
-            3. Participation in the discourse development and IRL meets
+            <i>3. Participation in the discourse development and in-person meetings</i>
             <br>
             Unit holders have access to the Discourse Development Discord.
             <br>
             <br>
-            4. Network curation
+            <i>4. Network curation</i>
             <br>
             The unit offers a code-link to invite friends.
             <br>
             <br>
-            5. The book PDF with a unique generative cover
+            <i>5. The book PDF with a unique generative cover</i>
             <br>
             The unit gives you the right to download the book PDF.
             <br>
             <br>	
-            6. Receiving the Special Edition print book 
+            <i>6. Receiving the Special Edition print book</i> 
             <br>
             If selected, your unit grants you a Special Edition print book delivered to your door.
             <br>
@@ -108,33 +108,40 @@
         <button id="priceTierOverlayClose" style="display:none" class="close-btn">X</button>
         <div id="priceTierContent" class="content" style="display:none;">
             <p>
-                <b>Use the slider to dial in your price range</b>
+                <b>Solidarity pricing slider</b>
                 <br>
                 <br>
-                If you have benefited from histories of imperialism, indicate it by moving the slider in that direction. Then click the "reveal price" button.
+                This pricing slider is built on the principle of collective solidarity. Our hope is to make these units accessible to those in precarious situations or living in the global periphery. We trust that if you have benefited from systemic inequalities or the structures of capitalism, or if you reside and work in a country within the Imperial Core and possess the means, you'll consider adjusting the slider upwards.
                 <br>
                 <br>
             </p>
             <!-- Slider container -->
             <div class="slider-container">
-                <label for="left-slider"><a href="https://economic-space-agency.gitbook.io/about-co-publishing-units-of-discourse/faq#how-much-does-it-cost-to-acquire-a-unit-of-discourse" target="_blank">Periphery</a></label>
+                <!-- was before & was good -->
+                <!-- <label for="left-slider"><a href="https://economic-space-agency.gitbook.io/about-co-publishing-units-of-discourse/faq#how-much-does-it-cost-to-acquire-a-unit-of-discourse" target="_blank">Periphery</a></label> -->
+                <!-- was before & was good -->
+                <label for="left-slider"><span class="tooltip"><span>Periphery</span><button class="term" id="peripheryTerm"></button><span class="definition" style="left: auto; margin-top:3px;">“More periphery” is meant for people with lower access to wealth in the global context (as a general rule of thumb: most people in the Global South and people who’ve been systematically disadvantaged or are poor/working class in the Global North. If you would like more detailed explanation, please visit our gitbook by clicking <a href='https://economic-space-agency.gitbook.io/about-co-publishing-units-of-discourse/faq#how-much-does-it-cost-to-acquire-a-unit-of-discourse' target="_blank">here.</a></span></span></label>
+
                 <input type="range" min="0" max="100" value="50" class="slider" id="colonizationSlider">
-                <label for="right-slider"><a href="https://economic-space-agency.gitbook.io/about-co-publishing-units-of-discourse/faq#how-much-does-it-cost-to-acquire-a-unit-of-discourse" target="_blank">Imperial Core</a></label>
+                <!-- was before & was good -->
+                <!-- <label for="right-slider"><a href="https://economic-space-agency.gitbook.io/about-co-publishing-units-of-discourse/faq#how-much-does-it-cost-to-acquire-a-unit-of-discourse" target="_blank">Imperial Core</a></label> -->
+                <!-- was before & was good -->
+                <label for="right-slider"><span class="tooltip"><span>Imperial core</span><button class="term" id="imperialCoreTerm"></button><span class="definition" style="left: auto; right: 0px; margin-top:3px">“More imperial core” is meant for people with medium to high access to wealth in the global context (as a general rule of thumb: middle class and upper/owning class people in the Global North, anyone with investments or retirement savings, anyone who expects an inheritance). If you would like more detailed explanation, please visit our gitbook by clicking <a href='https://economic-space-agency.gitbook.io/about-co-publishing-units-of-discourse/faq#how-much-does-it-cost-to-acquire-a-unit-of-discourse' target="_blank">here.</a></span></span></label>
             </div>
             <!-- Slider container -->
             <!-- Price Tiers Selection -->
             <form id="priceTiers">
-                <label id ="selectPhsyicalBookLabel">
+                <label id="selectPhsyicalBookLabel">
                     <input type="checkbox" name="tier" value="0.0001" class="custom-radio" id="physicalBookCheckbox">
                     <span id="includePhysicalBookChoise"></span> Include the <a href="https://economic-space-agency.gitbook.io/about-co-publishing-units-of-discourse/capabilities-and-rights#6.-the-special-edition-print-book-published-by-minor-compositions-colchester-new-york-port-watson-20" target="_blank"> Special edition print book </a> ( delivered to your door )
                 </label>
-                <!--
                 <br>
                 <br>
-                <label>
-                    <input type="radio" name="tier" value="0.0002" class="custom-radio">
-                    <span></span> Tier 2 - 0.05 ETH
-                </label> -->
+                <label id="alreadyReceivedPhsyicalBookLabel">
+                    <input type="checkbox" name="tier" value="0.0001" class="custom-radio1" id="alreadyReceivedPhysicalBookCheckbox">
+                    <span id="alreadyReceivedPhysicalBookChoise"></span> I have already received physical book
+                </label>
+                
             </form>
             <!-- Reveal price -->
             <div style="margin-top:1em" id="revealPriceDiv">
@@ -224,7 +231,7 @@
         <nav class="secondaryNavMenu" id="navBook">
             <a href="https://www.minorcompositions.info/?p=1195" target="_blank">physical<br>book</a>
             <a href="https://matslats.net/ecsa-economic-grammar-multitude-protocols-postcapitalist-economic-espression-audiobook" target="_blank">audio<br>book</a>
-            <a href="#" target="_blank">epub</a>
+            <a href="ipfs://QmSnPxTQQZZkzHePDsU2NowCuiNZuZ4TB2FSR8D48vY1aN" target="_blank">epub</a>
             <a href="https://ecsa-nft.mypinata.cloud/ipfs/QmUhhFyZ8T9qSaQ5E8ep9pm3Yy36cPk9EFZmYhqxCpMK4N" target="_blank">pdf</a>
         </nav>
 
@@ -7436,6 +7443,27 @@
     // and update the content of their child sup tags
     for (let i = startIndex; i < allFootNotes.length; i++) {
         allFootNotes[i].querySelector('sup').innerHTML = i - startIndex + 1;
+    }
+
+    // Updating the other: 
+    // Get all elements with class 'footNote'
+    let footnotes = document.getElementsByClassName('footNote');
+    
+    // Find the index of the starting element (id 'fn3')
+    let startIndex1 = 0;
+    for (let i = 0; i < footnotes.length; i++) {
+        if (footnotes[i].id === 'fn3') {
+            startIndex1 = i;
+            break;
+        }
+    }
+    
+    // Update the starting element and all subsequent elements
+    for (let i = startIndex1; i < footnotes.length; i++) {
+        let currentVal = parseInt(footnotes[i].innerText, 10);
+        if (!isNaN(currentVal)) {
+            footnotes[i].innerText = currentVal - 2;
+        }
     }
 
 </script>

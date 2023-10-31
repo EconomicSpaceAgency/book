@@ -1,5 +1,5 @@
 function getPhysicalBookIncluded() {
-    const checkbox = document.querySelector('#priceTiers input[type="checkbox"]:checked');
+    const checkbox = document.querySelector('#physicalBookCheckbox:checked');
     if (checkbox) {
         if(checkbox.checked){
             return true;

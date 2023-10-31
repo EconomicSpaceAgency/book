@@ -1445,6 +1445,14 @@ input:focus{
     #includePhysicalBookChoise{
         margin-right: 27px;
     }
+    #peripheryTerm{
+        padding: unset;
+        width: 2.5em !important;
+    }
+    #imperialCoreTerm{
+        padding: unset;
+        width: 1.6em !important;
+    }
 }
 /* trying to fix issue in google chrome */
 .asci {
@@ -1457,13 +1465,29 @@ input:focus{
     #aboutContent1 {
       overflow-y: auto;
     }
-    #hiddenBookIndex{
-        display: none;
-    }
     #aboutOverlayNext{
         margin-top: 3vh;
     }
+    /* #hiddenBookIndex{
+        display: none;
+    } */
+    
+    /* #bookIndex{
+        display: none;
+    } */
 }
 #benefitsPackage{
     border-top:1px solid;
+}
+#enterTheDiscourseButton{
+    border:none !important;
+    align-self: flex-end;
+}
+#peripheryTerm{
+    padding: unset;
+    width: 3em;
+}
+#imperialCoreTerm{
+    padding: unset;
+    width: 4.3em;
 }

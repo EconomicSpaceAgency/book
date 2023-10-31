@@ -12,6 +12,7 @@ import { checkAndSwitchNetwork } from '../ux/checkAndSwitchNetwork.js';
 import { clearMintingError } from '../web3/ui-interactions/index';
 import { isTokenReserved } from '../web3/isTokenReserved';
 import { getFinalPrice } from '../ux/revealPrice.js';
+import { getMintedTokens, isTokenMinted } from  '../web3/getMintedTokens';
 
 async function submitSelection() {
 
@@ -61,6 +62,13 @@ async function submitSelection() {
         //     return;
         // }
         if(connected){
+            const mintedTokens = await getMintedTokens();
+            const mintedToken = await isTokenMinted(tokenId, mintedTokens);
+            if(mintedToken){
+                let tokenAlreadyExistError = "Sorry, it seems that token is already published. Would you be willing to choose another one?";
+                revertWaitingForTransactionToInitiate();
+                displayError(tokenAlreadyExistError);
+            }
             let reserved = await isTokenReserved(tokenId);
             if (reservationsActive && reservationId) {
                 const reservationError = await handleReservations(address, reservationsActive, reservationId, tokenId, physicalBookIncluded, chosenPrice);
@@ -88,7 +96,7 @@ async function submitSelection() {
                     withoutReservationAndInvitationError = "Token is still reserved";
                 }
                 else if(invitationsActive){
-                    withoutReservationAndInvitationError = "Invitations are still active";
+                    withoutReservationAndInvitationError = `Sorry, you need an invitation to co-publish! <a href="https://economic-space-agency.gitbook.io/about-co-publishing-units-of-discourse/faq#invites" target="_blank">How to get an invitation?</a>`;
                 }
                 else{
                     withoutReservationAndInvitationError = await handleWithoutInvitationOrReservation(address, reservationsActive, invitationsActive, tokenId, physicalBookIncluded, chosenPrice);

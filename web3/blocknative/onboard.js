@@ -46,13 +46,13 @@ const chains = [
     id: 11155111,
     token: 'ETH Sepolia',
     label: 'Sepolia Testnet',
-    rpcUrl: `https://eth-sepolia.g.alchemy.com/v2/-tMMu3AHudsbSzy1OJNFuhoiFCgHLKwE`
+    rpcUrl: `https://eth-sepolia.g.alchemy.com/v2/${import.meta.env.VITE_RPC_URL_SEPOLIA}`
   },
   // {
   //   id: 137,
   //   token: 'MATIC',
   //   label: 'Matic Mainnet',
-  //   rpcUrl: 'https://matic-mainnet.chainstacklabs.com'
+  //   rpcUrl: `https://polygon-mainnet.g.alchemy.com/v2/${import.meta.env.VITE_RPC_URL_POLYGON}`
   // },
 ]
 
