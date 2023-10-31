@@ -8,7 +8,7 @@ function initiateListenersForSliderAndBookIncluded (){
         let revealPriceButton = document.getElementById('revealPriceButton');
         if(revealPriceButton){
             if(localStorage.getItem('priceRevealed') == 'true'){
-                revealPriceButton.innerHTML = `Price: ${finalPrice} ETH`;
+                revealPriceButton.innerHTML = `Price: ${finalPrice} Matic`;
             }
             else{
                 console.log('could not find reveal price');
@@ -20,7 +20,7 @@ function initiateListenersForSliderAndBookIncluded (){
         let revealPriceButton = document.getElementById('revealPriceButton');
         if(revealPriceButton){
             if(localStorage.getItem('priceRevealed') == 'true'){
-                revealPriceButton.innerHTML = `Price: ${finalPrice} ETH`;
+                revealPriceButton.innerHTML = `Price: ${finalPrice} Matic`;
             }
             else{
                 console.log('could not find reveal price');
