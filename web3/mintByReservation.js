@@ -797,7 +797,7 @@ const mintByReservation = async (tokenId, reservationId, physicalBookIncluded, c
         clearMintingError();
         
         const transaction = await nftContract.mintByReservation(tokenId, reservationId, choosenPriceWei, {
-            gasLimit: 12000000,
+            // gasLimit: 12000000,
             value: choosenPriceWei
         });
         closePriceTierOverlay();
