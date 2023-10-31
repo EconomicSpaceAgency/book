@@ -3,7 +3,7 @@ import {initiateSupabase} from './supabase';
 const supabase = initiateSupabase();
 
 async function insertOrder(name, mailingAddress, phoneNumber, contact, wallet) {
-    console.log("wallet:", wallet);
+    // console.log("wallet:", wallet);
     try {
         // Validate the input values
         if (!name || typeof name !== 'string') {
@@ -67,7 +67,7 @@ async function updateOrderByWallet(name, mailingAddress, phoneNumber, contact, w
         // Check for any errors during the update
         if (error) throw error;
         // Return the updated data (or true if you do not need the updated data)
-        console.log("updateOrderByWallet: ", data);
+        // console.log("updateOrderByWallet: ", data);
         return data;
     } catch (error) {
         console.error("Error updating order by wallet:", error);

@@ -41,7 +41,7 @@ function handleMouseOver(element) {
         element.style.boxShadow = '0 0 100px white';
         element.style.transition = 'background 1s ease, box-shadow 1s ease';
     } else {
-        console.log('element is already active', element);
+        // console.log('element is already active', element);
     }
 }
 

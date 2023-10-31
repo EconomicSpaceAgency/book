@@ -2,7 +2,6 @@ function getPhysicalBookAlreadyReceived() {
     const checkbox = document.querySelector('#alreadyReceivedPhysicalBookCheckbox:checked');
     if (checkbox) {
         if(checkbox.checked){
-            console.log('alreadyReceivedPhysicalBook', checkbox.checked);
             return true;
         }
         else{

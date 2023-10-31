@@ -60,7 +60,7 @@ async function setReservationUsed(reservationValue, usedByWallet) {
             .eq('value', reservationValue);
         
         if (error) throw error;
-        console.log('reservation marked as used.');
+        // console.log('reservation marked as used.');
     } catch (error) {
         console.error("Error marking invitation as used:", error);
     }
@@ -74,7 +74,7 @@ async function getReservationByReservationValue(reservationValue) {
             .limit(1);
         
         if (error) throw error;
-        console.log('getReservationByReservationValue data response: ', data);
+        // console.log('getReservationByReservationValue data response: ', data);
 
         // If data is present and has a length greater than 0, return the first invitation. 
         // Otherwise, return null.
