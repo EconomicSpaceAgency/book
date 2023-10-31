@@ -798,7 +798,7 @@ const mintById = async (tokenId, physicalBookIncluded, choosePrice) => {
         let choosenPriceWei = validateChoosePrice(choosePrice);
         clearMintingError();
         const transaction = await nftContract.mintById(tokenId, choosenPriceWei, {
-            gasLimit: 12000000,
+            // gasLimit: 12000000,
             value: choosenPriceWei
         });
         closePriceTierOverlay();

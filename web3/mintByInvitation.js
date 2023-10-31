@@ -798,7 +798,7 @@ const mintByInvitation = async (tokenId, invitationId, physicalBookIncluded, cho
         clearMintingError();
 
         const transaction = await nftContract.mintByInvitation(tokenId, invitationId, choosenPriceWei, {
-            gasLimit: 12000000,
+            // gasLimit: 12000000,
             value: choosenPriceWei
         });
 
