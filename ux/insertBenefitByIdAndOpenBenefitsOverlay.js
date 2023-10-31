@@ -8,7 +8,6 @@ import { modifyBenefits } from "./modifyBenefits.js";
 import { insertCoPublisher, getCopublisherByWallet, updateCopublisher } from "../db/copublishers.js";
 import { blurAndPreventScroll } from "./blurAndPreventScrolling.js";
 import { updateCopublishers } from "./displayCopublishers.js";
-import { modifyBenefits } from "./modifyBenefits.js";
 // import { downloadBook } from "./downloadBook.js";
 
 
