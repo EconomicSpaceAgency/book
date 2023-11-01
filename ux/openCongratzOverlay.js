@@ -3,12 +3,9 @@ import { blurAndPreventScroll } from "./blurAndPreventScrolling.js";
 
 const openCongratzOverlay = async function(physicalBookIncluded) {
     if (physicalBookIncluded == false || localStorage.getItem('pbi') == 'false'){
-        // console.log('physicalBookIncluded: ', physicalBookIncluded);
-        // console.log('pbi: ', localStorage.getItem('pbi'));
         modifyBenefits(); 
     }
     else{
-        console.log("physicalBook is included! : ", physicalBookIncluded);
     }
     const congratzOverlay = document.getElementById('congratzOverlay');
     if(congratzOverlay){
