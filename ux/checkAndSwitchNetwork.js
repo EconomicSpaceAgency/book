@@ -15,7 +15,7 @@ const checkAndSwitchNetwork = async (provider) => {
     
     if (currentNetworkId !== expectedNetworkIdNumber) {
         try {
-            await window.ethereum.request({ method: 'wallet_switchEthereumChain', params: [{ chainId: ethers.utils.hexlify(expectedNetworkId) }] });
+            await window.ethereum.request({ method: 'wallet_switchEthereumChain', params: [{ chainId: expectedNetworkId }] });
         } catch (switchError) {
             throw new Error(`Please change your network to ${import.meta.env.VITE_NETWORK}`);
         }
