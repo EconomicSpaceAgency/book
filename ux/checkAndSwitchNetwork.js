@@ -1,3 +1,4 @@
+import { ethers } from "ethers";
 const checkAndSwitchNetwork = async (provider) => {
    
     const VITE_NETWORK = import.meta.env.VITE_NETWORK;
@@ -12,10 +13,11 @@ const checkAndSwitchNetwork = async (provider) => {
     const currentNetworkId = await provider.getNetwork().then(net => net.chainId);
     console.log('provider.getNetwork, ', currentNetworkId);
     console.log('expectedNetworkIdNumber', expectedNetworkIdNumber);
+    console.log('ethers.utils.hexlify(expectedNetworkId)', ethers.hexlify(expectedNetworkId));
     
     if (currentNetworkId !== expectedNetworkIdNumber) {
         try {
-            await window.ethereum.request({ method: 'wallet_switchEthereumChain', params: [{ chainId: ethers.utils.hexlify(expectedNetworkId) }] });
+            await window.ethereum.request({ method: 'wallet_switchEthereumChain', params: [{ chainId: ethers.hexlify(expectedNetworkId) }] });
         } catch (switchError) {
             throw new Error(`Please change your network to ${import.meta.env.VITE_NETWORK}`);
         }
