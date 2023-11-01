@@ -13,7 +13,6 @@ function downloadBenefits() {
 
     // Combine the links
     var combinedLinks = asciText + "\n" + text1 + "\n" + link1 + "\n" + text2 + "\n" + link2 + "\n" + text3 + "\n" + link3 + "\n" + text4 + "\n" + link4;
-    // var combinedLinks = link1 + "\n";
 
     // Create a blob from the combined links
     var blob = new Blob([combinedLinks], { type: "text/plain;charset=utf-8" });

@@ -50,8 +50,8 @@ const chains = [
   // },
   {
     id: 137,
-    token: 'MATIC',
-    label: 'Matic Mainnet',
+    token: 'Polygon',
+    label: 'Polygon Mainnet',
     rpcUrl: `https://polygon-mainnet.g.alchemy.com/v2/${import.meta.env.VITE_RPC_URL_POLYGON}`
   },
 ]
