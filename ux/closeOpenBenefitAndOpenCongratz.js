@@ -3,7 +3,6 @@ import { blurAndPreventScroll, disableBlurAndEnableScroll } from "./blurAndPreve
 import { modifyBenefits } from "./modifyBenefits";
 function closeOpenBenefitAndOpenCongratz() {
     if (localStorage.getItem('pbi') == 'false'){
-        // console.log('this should not modify benefits!');
         modifyBenefits(); 
     }
     let benefit1Overlay = document.getElementById("benefit1Overlay");

@@ -34,6 +34,7 @@ async function submitSelection() {
                 await checkAndSwitchNetwork(provider);
             } catch (error) {
                 displayError(error.message);
+                revertWaitingForTransactionToInitiate();
                 return;
             }
         }

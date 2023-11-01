@@ -1,4 +1,10 @@
 import { ethers } from "ethers";
+
+const containsString = (obj, searchString) => {
+    return Object.values(obj).some(value => 
+        typeof value === 'string' && value.includes(searchString)
+    );
+}
 const checkAndSwitchNetwork = async (provider) => {
    
     const VITE_NETWORK = import.meta.env.VITE_NETWORK;
@@ -20,8 +26,13 @@ const checkAndSwitchNetwork = async (provider) => {
             try {
                 await window.ethereum.request({ method: 'wallet_switchEthereumChain', params: [{ chainId: ethers.hexlify(expectedNetworkId) }] });
             } catch (switchError) {
-                throw new Error(`${switchError}`);
-                // throw new Error(`Please change your network to ${import.meta.env.VITE_NETWORK}`);
+                
+                if(containsString(switchError, "User rejected the request.")){
+                    throw new Error(`Please change your network to ${import.meta.env.VITE_NETWORK}`);    
+                }
+                else{
+                    throw new Error(`${switchError}`);
+                }
             }
         }
     }
