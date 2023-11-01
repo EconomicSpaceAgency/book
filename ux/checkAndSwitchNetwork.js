@@ -16,11 +16,13 @@ const checkAndSwitchNetwork = async (provider) => {
     console.log('ethers.utils.hexlify(expectedNetworkId)', ethers.hexlify(expectedNetworkId));
     
     if (currentNetworkId !== expectedNetworkIdNumber) {
-        try {
-            await window.ethereum.request({ method: 'wallet_switchEthereumChain', params: [{ chainId: ethers.hexlify(expectedNetworkId) }] });
-        } catch (switchError) {
-            throw new Error(`${switchError}`);
-            // throw new Error(`Please change your network to ${import.meta.env.VITE_NETWORK}`);
+        if(window.ethereum){
+            try {
+                await window.ethereum.request({ method: 'wallet_switchEthereumChain', params: [{ chainId: ethers.hexlify(expectedNetworkId) }] });
+            } catch (switchError) {
+                throw new Error(`${switchError}`);
+                // throw new Error(`Please change your network to ${import.meta.env.VITE_NETWORK}`);
+            }
         }
     }
 }
