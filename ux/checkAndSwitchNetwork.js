@@ -10,8 +10,8 @@ const checkAndSwitchNetwork = async (provider) => {
     const expectedNetworkIdNumber = VITE_NETWORK == "sepolia" ? VITE_EXPECTED_NETWORK_SEPOLIA_ID_NUMBER: VITE_EXPECTED_NETWORK_POLYGON_NUMBER;
     
     const currentNetworkId = await provider.getNetwork().then(net => net.chainId);
-    // console.log('provider.getNetwork, ', currentNetworkId);
-
+    console.log('provider.getNetwork, ', currentNetworkId);
+    console.log('expectedNetworkIdNumber', expectedNetworkIdNumber);
     if (currentNetworkId !== expectedNetworkIdNumber) {
         try {
             await window.ethereum.request({ method: 'wallet_switchEthereumChain', params: [{ chainId: expectedNetworkId }] });
