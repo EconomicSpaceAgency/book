@@ -18,8 +18,6 @@ async function getAnNFTViaOpenSea(tokenId) {
       return response.json();
     })
     .then(data => {
-      // console.log('open sea response: ', data);
-      // console.log('what we actually need from open sea: ', data.nft.image_url);
       return data.nft;
     })
     .catch(error => {

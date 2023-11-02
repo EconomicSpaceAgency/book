@@ -29,7 +29,7 @@ const openCongratzOverlay = async function(physicalBookIncluded) {
     if(enterTheDiscourseButton){
         enterTheDiscourseButton.addEventListener('click', function(){
             // console.log('Last step was clicked!');
-            window.open('https://discord.gg/phazawkuSq', '_blank').focus();
+            window.open('https://discord.gg/MWApYu2MR8', '_blank').focus();
         });
     }
 }
