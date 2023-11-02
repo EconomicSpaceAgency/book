@@ -1,1 +1,1 @@
-# ecsa-book-vite
+# Protocols for postcapitalist expressions
