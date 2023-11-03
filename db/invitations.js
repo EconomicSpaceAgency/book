@@ -32,6 +32,8 @@ async function setInvitationUsed(invitationValue, usedByWallet) {
         if (data.length === 0) throw new Error("Invitation not found");
         
         const currentUsedTimes = data[0].used_times;
+        const currentUsedByWallets = data[0].used_by_wallet;
+        const final = currentUsedByWallets + usedByWallet;
         
         // 2. Increment that value
         const newUsedTimes = currentUsedTimes + 1;
@@ -40,7 +42,7 @@ async function setInvitationUsed(invitationValue, usedByWallet) {
         const updateResponse = await supabase
             .from('invitations')
             .update({ 
-                used_by_wallet: usedByWallet,
+                used_by_wallet: final,
                 used_times: newUsedTimes
             })
             .eq('value', invitationValue);
@@ -151,6 +153,18 @@ async function setInvitationsCreatedWithInvitationId(initialInvitationId, referr
         console.error("Error setting invitations with the invitation ID:", error);
     }
 }
+async function setInvitationForWallet(invitation, wallet) {
+    try {
+        const { error } = await supabase
+            .from('invitations')
+            .update({ for_wallet: wallet })
+            .eq('value', invitation);
+        if (error) throw error;
+        console.log('Invitation set for wallet.');
+    } catch (error) {
+        console.error("Error marking invitation set for wallet: ", error);
+    }
+}
 
 
-export {isInvitationValid, getNextInvitation, getNextThreeInvitations, setInvitationUsed, getInvitationByInvitationValue, setInvitationsCreatedWithInvitationId, setInvitationInvitedBy, setInvitationInvitedByReservation}
+export {isInvitationValid, getNextInvitation, getNextThreeInvitations, setInvitationUsed, getInvitationByInvitationValue, setInvitationsCreatedWithInvitationId, setInvitationInvitedBy, setInvitationInvitedByReservation, setInvitationForWallet}
