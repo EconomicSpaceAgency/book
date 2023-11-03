@@ -40,7 +40,7 @@ function getBenefitBasedOnId(id){
         <summary>Read more</summary>
         As part of the activities of the node, the ECSA team will curate public discussions with interesting guests as well as facilitate Q&A with the authors. The community that forms in the discord will shape its own future, with the possibility of becoming a DAO that holds a portion of the sale’s funds, or even becoming a node in the emerging ECSA economic network!<br>
         </p>
-        <details>
+        </details>
         `,
 
         `
@@ -53,7 +53,7 @@ function getBenefitBasedOnId(id){
         <details>
         <summary>Read more</summary>
         Those you invite will gain all the rights of the unit holder once the unit is acquired, including their own invite link to share with their friends. The aim is to turn the process of co-publishing this book-object into a network: a living discourse on postcapitalist expression.
-        <details>
+        </details>
         <br>
         <br>
         Your shareable invite-link is here, it can be used by max 5 different people to acquire one unit each:

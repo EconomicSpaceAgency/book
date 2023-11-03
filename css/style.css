@@ -1351,6 +1351,11 @@ b {
 #benefit1OverlayContent{
     overflow-y: auto;
 }
+
+#benefit1Overlay details{
+    line-height: 1.5em;
+}
+
 .aboutContent{
     padding: 3vw;
     padding-top: 50px;
