@@ -1,5 +1,5 @@
 
-@media(max-width: 1800px) {
+@media(max-width: 1600px) {
 
     body{
         grid-template-columns: var(--pageGridColumns3);

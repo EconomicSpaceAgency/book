@@ -1406,6 +1406,7 @@ input:focus{
 .slider {
     width: 60%;
     vertical-align: middle;
+    accent-color: var(--c4);
 }
 
 .content button{
