@@ -86,7 +86,12 @@ async function getAllYourAssets(){
                 try{
                     let wallet = localStorage.getItem('wallet');
                     console.log('wallet: ', wallet);
-                    await setInvitationForWallet(invitation, wallet.toString());
+                    // Create a URL object
+                    const parsedUrl = new URL(invitation);
+                    // Get the 'invitationId' query parameter
+                    const invitationId = parsedUrl.searchParams.get('invitationId');
+                    console.log('invitationId:', invitationId);
+                    await setInvitationForWallet(invitationId, wallet.toString());
                 }
                 catch(error){
                     console.log('setting wallet for invitation silently failed...', error);
