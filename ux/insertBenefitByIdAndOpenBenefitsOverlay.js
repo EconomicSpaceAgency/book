@@ -179,6 +179,7 @@ const insertBenefitByIdAndOpenBenefitsOverlay = async function(content) {
         }
         try{
             let wallet = localStorage.getItem('wallet');
+            console.log('wallet: ', wallet);
             await setInvitationForWallet(invitation, wallet);
         }
         catch(error){
