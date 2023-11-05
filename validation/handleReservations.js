@@ -3,7 +3,7 @@ import { isTokenReserved } from "../web3/isTokenReserved";
 import { mintByReservation} from "../web3/mintByReservation";
 import { hasMinted } from "../web3/hasMinted";
 
-async function handleReservations(reservationsActive, reservationId, tokenId, physicalBookIncluded, choosenPrice){
+async function handleReservations(address, reservationsActive, reservationId, tokenId, physicalBookIncluded, choosenPrice){
 
     let hasMintedR = await hasMinted(address);
     if(hasMintedR){
