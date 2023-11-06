@@ -51,24 +51,32 @@ function getFinalPrice(){
     let colonisationLevel = getColonizationLevel();
     let bookSelected = getPhysicalBookIncluded();
     let finalPrice;
+    let isPhysicalBookAlreadyReceived = getPhysicalBookAlreadyReceived();
 
-    if(bookSelected){
-        if(colonisationLevel >= 50){
-            finalPrice = Number(imperialCorePrice) + Number(imperialCoreBookPrice);
-        }
-        else{
-            let finalPriceBeforeRounding = Number(periphery) + Number(peripheryBookPrice);
-            finalPrice = Number(finalPriceBeforeRounding.toFixed(4));
-        }
+    if(isPhysicalBookAlreadyReceived){
+        let finalPriceBeforeRounding = Number(periphery) + Number(peripheryBookPrice);
+        finalPrice = Number(finalPriceBeforeRounding.toFixed(4));
     }
     else{
-        if(colonisationLevel >= 50){
-            finalPrice = imperialCorePrice;
+        if(bookSelected){
+            if(colonisationLevel >= 50){
+                finalPrice = Number(imperialCorePrice) + Number(imperialCoreBookPrice);
+            }
+            else{
+                let finalPriceBeforeRounding = Number(periphery) + Number(peripheryBookPrice);
+                finalPrice = Number(finalPriceBeforeRounding.toFixed(4));
+            }
         }
         else{
-            finalPrice = periphery;
+            if(colonisationLevel >= 50){
+                finalPrice = imperialCorePrice;
+            }
+            else{
+                finalPrice = periphery;
+            }
         }
     }
+    
     return finalPrice;
 }
 function replaceRevealPriceButtonWithActualPrice(revealedPrice){
