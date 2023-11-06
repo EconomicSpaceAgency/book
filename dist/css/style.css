@@ -767,9 +767,9 @@
     .unitNFT{
         background-color: transparent;
         float: left;
-        width: 3rem;
+        width: 2.5rem;
         margin-right: 0.45em;
-        margin-top: 0.3em;
+        margin-top: 0.2em;
         position: relative;
         cursor: pointer;
         border: 8px solid #010101;
@@ -906,7 +906,7 @@
     cursor: pointer;
 }
 
-#coPulbishers{
+#coPublishers{
     grid-column: 1 / -1;
     border-top: 1px solid var(--c1);
 }
@@ -1351,6 +1351,11 @@ b {
 #benefit1OverlayContent{
     overflow-y: auto;
 }
+
+#benefit1Overlay details{
+    line-height: 1.5em;
+}
+
 .aboutContent{
     padding: 3vw;
     padding-top: 50px;
@@ -1406,6 +1411,7 @@ input:focus{
 .slider {
     width: 60%;
     vertical-align: middle;
+    accent-color: var(--c4);
 }
 
 .content button{
