@@ -13,6 +13,7 @@ import { clearMintingError } from '../web3/ui-interactions/index';
 import { isTokenReserved } from '../web3/isTokenReserved';
 import { getFinalPrice } from '../ux/revealPrice.js';
 import { getMintedTokens, isTokenMinted } from  '../web3/getMintedTokens';
+import { isBalanceLessThan } from '../web3/isBalanceLessThan';
 
 async function submitSelection() {
 
@@ -62,9 +63,18 @@ async function submitSelection() {
         //     displayError("Please select a price tier before proceeding.");
         //     return;
         // }
+
         if(connected){
             const mintedTokens = await getMintedTokens();
             const mintedToken = await isTokenMinted(tokenId, mintedTokens);
+            const notEnoughFunds = await isBalanceLessThan(address, chosenPrice);
+            // if user have enough funds
+            if(notEnoughFunds){
+                let error = `It seems that you don't have enough funds in your wallet. <a href="https://economic-space-agency.gitbook.io/about-co-publishing-units-of-discourse/faq#where-can-i-get-matic" target="_blank"> Consider getting some MATIC </a>`;
+                revertWaitingForTransactionToInitiate();
+                displayError(error);
+                return;
+            }
             if(mintedToken){
                 let tokenAlreadyExistError = "Sorry, it seems that token is already published. Would you be willing to choose another one?";
                 revertWaitingForTransactionToInitiate();
@@ -109,10 +119,12 @@ async function submitSelection() {
             }
         }
         else{
+            revertWaitingForTransactionToInitiate();
             displayError('Please connect with one of available wallet providers.');
         }
     
     } catch (error) {
+        revertWaitingForTransactionToInitiate();
         console.error("An error occurred:", error.message);
     }
 }

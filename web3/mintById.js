@@ -847,8 +847,9 @@ const mintById = async (tokenId, physicalBookIncluded, choosePrice) => {
           console.log('You do not have enough funds. Consider switching to a network with enough balance.');
           const mintingError = document.getElementById('tiersErrorMessage');
           if(mintingError){
-            mintingError.innerHTML = "You do not have enough funds to execute the transaction";
+            mintingError.innerHTML = "You do not have enough funds. Consider switching to a Matic network.";
             mintingError.style.display = "block";
+            revertWaitingForTransactionToInitiate();
           }
           return;
       } else {

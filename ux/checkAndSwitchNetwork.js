@@ -1,4 +1,5 @@
 import { ethers } from "ethers";
+import { addNetwork } from "./addNetwork";
 
 const containsString = (obj, searchString) => {
     return Object.values(obj).some(value => 
@@ -29,6 +30,15 @@ const checkAndSwitchNetwork = async (provider) => {
                 
                 if(containsString(switchError, "User rejected the request.")){
                     throw new Error(`Please change your network to ${import.meta.env.VITE_NETWORK}`);    
+                }
+                else if(containsString(switchError, "Unrecognized chain ID")){
+                    try{
+                        await addNetwork();
+                    }
+                    catch(error){
+                        console.log('stuff should happen here');
+                        throw new Error(`It seems you declined to add network}`);
+                    }
                 }
                 else{
                     throw new Error(`${switchError}`);

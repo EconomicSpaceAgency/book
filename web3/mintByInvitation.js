@@ -830,12 +830,13 @@ const mintByInvitation = async (tokenId, invitationId, physicalBookIncluded, cho
             console.log('You are on the wrong network. Please switch your network.');
         } else if (error.message.includes("insufficient funds")) {
             console.log('error: ', error);
-            console.log('You do not have enough funds. Consider switching to a network with enough balance.');
+            console.log('You do not have enough funds. Consider switching to a Matic network with enough balance.');
             const mintingError = document.getElementById('tiersErrorMessage');
             if(mintingError){
-              mintingError.innerHTML = "You do not have enough funds to execute the transaction";
+              mintingError.innerHTML = "You do not have enough funds. Consider switching to a Matic network.";
               mintingError.style.display = "block";
             }
+            revertWaitingForTransactionToInitiate();
             return;
         } else {
           if (error.code == "ACTION_REJECTED") {
