@@ -48,7 +48,7 @@ const setOrbBorderToSignalThatUnitIsPublished = (tokenId) => {
     const unit = document.getElementById(`orb_${tokenId}`);
     if(unit){
         // unit.style.filter = 'blur(4px)';
-        unit.style.opacity = '0.1';
+        unit.style.opacity = '0.35';
     }
 }
 
