@@ -1511,6 +1511,7 @@ input:focus{
 #tiersErrorMessage{
     display: none; 
     margin-top:20px;
+    padding-left: 0 !important;
 }
 #copublishButtonDiv{
     margin-top:1em;
