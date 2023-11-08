@@ -1576,3 +1576,26 @@ input:focus{
     padding: unset;
     width: 4.3em;
 }
+.step-indicator {
+    position: absolute;
+    height: 30px;
+    width: 2px;
+    background-color: #fffefe;
+    left: 45%;
+    top: 38%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+  }
+
+@media only screen and (max-width: 643px) {
+    .step-indicator {
+        position: absolute;
+        height: 30px;
+        width: 2px;
+        background-color: #fffefe;
+        left: 45%;
+        top: 41%;
+        transform: translate(-50%, -50%);
+        z-index: 1;
+      }
+}
