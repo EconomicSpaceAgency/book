@@ -2,7 +2,7 @@ import { isReservationValid, isReservationValidForTokenId } from "../db/reservat
 import { isTokenReserved } from "../web3/isTokenReserved";
 import { mintByReservation} from "../web3/mintByReservation";
 import { hasMinted } from "../web3/hasMinted";
-
+import { enoughFunds } from "./enoughFunds.js";
 async function handleReservations(address, reservationsActive, reservationId, tokenId, physicalBookIncluded, choosenPrice){
 
     let hasMintedR = await hasMinted(address);
@@ -18,6 +18,10 @@ async function handleReservations(address, reservationsActive, reservationId, to
                 if(validReservation){
                     let validReservationForTokenId = await isReservationValidForTokenId(reservationId, parseInt(tokenId, 10));
                     if(validReservationForTokenId){
+                        let walletHasEnoughFunds = await enoughFunds(address, choosenPrice);
+                        if(!walletHasEnoughFunds){
+                            return `It seems that you don't have enough funds in your wallet. <a href="https://economic-space-agency.gitbook.io/about-co-publishing-units-of-discourse/faq#where-can-i-get-matic" target="_blank"> Consider getting some MATIC </a>`;
+                        }
                         localStorage.setItem('pbi', physicalBookIncluded);
                         await mintByReservation(parseInt(tokenId, 10), reservationId, physicalBookIncluded, choosenPrice);
                         return true;

@@ -8,7 +8,6 @@ function getPhysicalBookIncluded() {
             return false;
         }
     } else {
-        console.warn('Checkbox is not selected.');
         return false;
     }
 }
