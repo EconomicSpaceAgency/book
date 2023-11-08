@@ -2,13 +2,13 @@ function getBenefitBasedOnId(id){
     const benefitsHigherTier = [
         `
         <p>
-        <b>1. Creditation as a Co-Publisher <br> (an acknowledgement that you have played for the commons)</b>
+        <b>1. Creditation as a Co-Publisher</b>
         <br>
         <br>
-        Co-publishing the units transforms the book-commodity into an open access publication that everyone can read, listen and circulate. As a thank you, you (your wallet address or your chosen name) will be listed as a Co-Publisher of the book at the book website and in the next PDF version of the book.
+        Co-publishing the unit you have chosen transforms this book-commodity into an open access publication. As a thank you, either your wallet address or your chosen name will be listed as a Co-Publisher of the book on this website and in the next PDF versions of the book.
         <br>
         <br>
-        If you'd prefer to have in the Co-publisher credits a human readable name, instead of your wallet adresss, please write it here:
+        To have your Co-publisher credit appear as a human readable chosen name (and not your wallet address), please write that name here:
         <br>
         <br>
         <input type="text" placeholder="nonlinear economic space agent..." spellcheck="false" id="copublisherName">
@@ -23,7 +23,11 @@ function getBenefitBasedOnId(id){
         <b>2. Access to the ECSA token multistake whitelist</b>
         <br>
         <br>
-        Your unit grants you access to the ECSA token presale whitelist (target date: TBC). A certain number of ECSA tokens – which are the project’s capital market facing governance tokens – will be allocated to an option pool divided among all the unit holders. The unit thus functions as an early access right to ECSA token multistake. Please follow our messaging at the <a href="https://t.me/economicspaceagency" target="_blank"> ECSA Telegram </a>, <a href="https://twitter.com/ecospaceagency" target="_blank"> ECSA Twitter </a>, and <a href="https://discord.gg/MWApYu2MR8" target="_blank"> Discourse Development Discord. </a>
+        Your unit grants you access to the ECSA token multistake whitelist (2024).
+        <details> 
+        <summary>Read more</summary>
+        A certain number of ECSA tokens – which are the project’s capital market facing governance tokens – will be allocated to an option pool divided among all the unit holders. The unit thus functions as an early access right to the ECSA token multistake. Please follow our messaging at the <a href="https://t.me/economicspaceagency" target="_blank"> ECSA Telegram </a>, <a href="https://twitter.com/ecospaceagency" target="_blank"> ECSA Twitter </a>, and <a href="https://discord.gg/MWApYu2MR8" target="_blank"> Discourse Development Discord. </a>
+        </details>
         </p>`,
 
         `
@@ -31,8 +35,12 @@ function getBenefitBasedOnId(id){
         <b>3. Participation in the discourse development and in-person meetings</b>
         <br>
         <br>
-        Your unit grants you access to the <a href="https://discord.gg/MWApYu2MR8" target="_blank"> Discourse Development Discord</a> , a community where unit holders will shape the discourse of the book by exchanging ideas, sharing insights and engaging in dialogue. As part of the activities of the node, the ECSA team will curate public discussions with interesting guests as well as facilitate Q&A with the authors. The community that forms in the discord will shape its own future, with the possibility of becoming a DAO that holds a portion of the sale’s funds, or even becoming a node in the emerging ECSA economic network!<br>
+        Your unit grants you access to the <a href="https://discord.gg/MWApYu2MR8" target="_blank"> Discourse Development Discord</a> , a community where unit holders will shape the discourse of the book by exchanging ideas, sharing insights and engaging in dialogue. 
+        <details>
+        <summary>Read more</summary>
+        As part of the activities of the node, the ECSA team will curate public discussions with interesting guests as well as facilitate Q&A with the authors. The community that forms in the discord will shape its own future, with the possibility of becoming a DAO that holds a portion of the sale’s funds, or even becoming a node in the emerging ECSA economic network!<br>
         </p>
+        </details>
         `,
 
         `
@@ -40,13 +48,15 @@ function getBenefitBasedOnId(id){
         <b>4. Network curation </b>
         <br>
         <br>
-        Your unit makes you a curator of this project. It offers you a code-link which can be used to invite friends to join the project. The first five people to use your invite-code will have the opportunity to participate in co-publishing the remaining units and become core members of the discourse’s development (i.e. the invite-code can be used by max 5 different people to acquire one unit). Your invitees gain all the unit holder's rights after acquiring their unit. 
-        The aim is to turn the book-object into a network: a living, spoken discourse on postcapitalist expression.
+        Your unit includes a unique code-link that enables up to 5 friends to co-publish themselves a new unit of discourse. We hope you will choose friends who you believe will be interested in the postcapitalist discourse. and whose participation will increase its value. But be quick, there are only 601 units available! 
         <br>
-        We hope you will choose friends who you believe will be interested in the postcapitalist discourse and whose participation will increase its value. But be quick, there are only 601 units available!
+        <details>
+        <summary>Read more</summary>
+        Those you invite will gain all the rights of the unit holder once the unit is acquired, including their own invite link to share with their friends. The aim is to turn the process of co-publishing this book-object into a network: a living discourse on postcapitalist expression.
+        </details>
         <br>
         <br>
-        Your sharable invite-link is here, it can be used by max 5 different people to acquire one unit:
+        Your shareable invite-link is here, it can be used by max 5 different people to acquire one unit each:
         <br>
         </p>
         <div class="invitation-container-minimal">
@@ -62,7 +72,7 @@ function getBenefitBasedOnId(id){
         `<b>5. The book PDF with a unique generative cover </b>
         <br>
         <br>
-        The unit gives you the right to download the book PDF with a unique generative cover. It will allow you to understand your unit of discourse’s meaning and relevance as part of the whole book. It assists you in determining the value of the token you hold.
+        The unit gives you the right to download a PDF copy of the book with a unique generative cover.
         <br>
         <br>
         <a id="dl" href="ipfs://QmcHt8YqmA8Vhnfg946kDPRVUfRFo5y7T75nuJPBbXCAMV" target="_blank"><button id="downloadPDF" class="download-button">Download ↓</button></a>
@@ -74,10 +84,10 @@ function getBenefitBasedOnId(id){
         <b>6. The print book published by Minor Compositions / Autonomedia (Colchester / New York / Port Watson, 2023)</b>
         <br>
         <br>
-        If you have selected it as an option, your unit includes the delivery of a physical special edition copy of the book delivered to your door. This edition will only enter production after finishing the sale. An estimated timeline and updates on the process will be communicated inside the discourse community.
+        If you have selected it as an option, your unit includes the delivery of a physical special edition copy of the book delivered to your door. This edition will only enter production after finishing the sale. An estimated delivery time and updates on the process will be communicated inside the <a href="https://discord.gg/MWApYu2MR8" target="_blank"> Discourse Development Discord</a>.
         <br>
         <br>
-        Please leave here your name and address where you would like it be delivered:
+        Please leave your name and preferred delivery address here:
         <br>
         <br>
         Name

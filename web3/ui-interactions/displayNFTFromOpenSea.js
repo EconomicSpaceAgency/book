@@ -11,7 +11,7 @@ const displayNFTImageFromOpenSea = async (tokenId) => {
         let tokenIdFinal = tokenId - 1;
 
         if(nftImage){
-          nftImage.src = `imgs/${tokenId}.png`;
+          nftImage.src = `imgs/${tokenIdFinal}.png`;
         }
       
         let url = import.meta.env.VITE_NETWORK == 'sepolia' ? 'testnets.opensea.io' : 'opensea.io'; 
