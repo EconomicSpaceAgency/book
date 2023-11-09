@@ -22,10 +22,11 @@ function calculateRevealPrice(){
     }
     else{
         let colonisationLevel = getColonizationLevel();
+        console.log('colonisationLevel: ', colonisationLevel);
         let bookSelected = getPhysicalBookIncluded();
 
         if(bookSelected){
-            if(colonisationLevel >= 50){
+            if(colonisationLevel >= 2){
                 finalPrice = Number(imperialCorePrice) + Number(imperialCoreBookPrice);
             }
             else{
@@ -34,7 +35,7 @@ function calculateRevealPrice(){
             }
         }
         else{
-            if(colonisationLevel >= 50){
+            if(colonisationLevel >= 2){
                 finalPrice = imperialCorePrice;
             }
             else{
@@ -49,6 +50,7 @@ function calculateRevealPrice(){
 // technical debt
 function getFinalPrice(){
     let colonisationLevel = getColonizationLevel();
+    console.log('colonisationLevel: ', colonisationLevel);
     let bookSelected = getPhysicalBookIncluded();
     let finalPrice;
     let isPhysicalBookAlreadyReceived = getPhysicalBookAlreadyReceived();
@@ -59,7 +61,7 @@ function getFinalPrice(){
     }
     else{
         if(bookSelected){
-            if(colonisationLevel >= 50){
+            if(colonisationLevel >= 2){
                 finalPrice = Number(imperialCorePrice) + Number(imperialCoreBookPrice);
             }
             else{
@@ -68,7 +70,7 @@ function getFinalPrice(){
             }
         }
         else{
-            if(colonisationLevel >= 50){
+            if(colonisationLevel >= 2){
                 finalPrice = imperialCorePrice;
             }
             else{
@@ -138,6 +140,14 @@ function enableAlreadyReceivedPhysicalBookCheckbox(){
         checkbox.disabled = false;
     }
 }
+function hideAlreadyReceivedPhysicalBookLabel(){
+    const checkbox = document.getElementById('alreadyReceivedPhsyicalBookLabel');
+    console.log("This happened!");
+    if(checkbox){
+        console.log()
+        checkbox.style.display = "none";
+    }
+}
 
 function revealPrice(){
     let price = calculateRevealPrice();
@@ -145,4 +155,4 @@ function revealPrice(){
 }
 
 window.revealPrice = revealPrice;
-export {revealPrice, getFinalPrice, enableSlider, enablePhysicalBookCheckbox, enableAlreadyReceivedPhysicalBookCheckbox, disableAlreadyReceivedPhysicalBookCheckbox, replaceRevealPriceButtonWithActualPriceReverse};
+export {revealPrice, getFinalPrice, enableSlider, enablePhysicalBookCheckbox, enableAlreadyReceivedPhysicalBookCheckbox, hideAlreadyReceivedPhysicalBookLabel, disableAlreadyReceivedPhysicalBookCheckbox, replaceRevealPriceButtonWithActualPriceReverse};

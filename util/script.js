@@ -1,13 +1,13 @@
 import { isTokenMinted } from '../web3/getMintedTokens.js'
 import { getMintedTokens } from '../web3/getMintedTokens.js';
 import { removeBlurFilter, setOrbBorderToSignalThatUnitIsPublished } from '../web3/ui-interactions/index.js';
-import { enableSlider, enablePhysicalBookCheckbox, enableAlreadyReceivedPhysicalBookCheckbox, replaceRevealPriceButtonWithActualPriceReverse } from "../ux/revealPrice.js";
+import { enableSlider, enablePhysicalBookCheckbox, enableAlreadyReceivedPhysicalBookCheckbox, hideAlreadyReceivedPhysicalBookLabel, replaceRevealPriceButtonWithActualPriceReverse } from "../ux/revealPrice.js";
 import { deselectPhysicalBook } from '../ux/deselectPhysicalBook.js';
 import { blurAndPreventScroll } from "../ux/blurAndPreventScrolling.js";
 import { disableOtherCheckBox, resetCheckBoxes } from '../ux/disableOtherCheckBox.js';
 import { resetBenefits } from '../ux/modifyBenefits.js';
 import { initiateListenersForSliderAndBookIncluded } from './initiateListenersForSliderAndBookIncluded';
-
+import { isThereReservation } from './isThereReservation.js';
 //Get the root style to access css variables
 let root  = document.documentElement;
 
@@ -501,6 +501,11 @@ fetch('glossary.json')
                 enableSlider();
                 enablePhysicalBookCheckbox();
                 enableAlreadyReceivedPhysicalBookCheckbox();
+                //if reservation, hide
+                let reservation = isThereReservation();
+                if(!reservation){
+                  hideAlreadyReceivedPhysicalBookLabel();
+                }
                 deselectPhysicalBook();
                 replaceRevealPriceButtonWithActualPriceReverse();
                 initiateListenersForSliderAndBookIncluded();
