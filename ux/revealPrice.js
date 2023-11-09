@@ -140,6 +140,14 @@ function enableAlreadyReceivedPhysicalBookCheckbox(){
         checkbox.disabled = false;
     }
 }
+function hideAlreadyReceivedPhysicalBookLabel(){
+    const checkbox = document.getElementById('alreadyReceivedPhsyicalBookLabel');
+    console.log("This happened!");
+    if(checkbox){
+        console.log()
+        checkbox.style.display = "none";
+    }
+}
 
 function revealPrice(){
     let price = calculateRevealPrice();
@@ -147,4 +155,4 @@ function revealPrice(){
 }
 
 window.revealPrice = revealPrice;
-export {revealPrice, getFinalPrice, enableSlider, enablePhysicalBookCheckbox, enableAlreadyReceivedPhysicalBookCheckbox, disableAlreadyReceivedPhysicalBookCheckbox, replaceRevealPriceButtonWithActualPriceReverse};
+export {revealPrice, getFinalPrice, enableSlider, enablePhysicalBookCheckbox, enableAlreadyReceivedPhysicalBookCheckbox, hideAlreadyReceivedPhysicalBookLabel, disableAlreadyReceivedPhysicalBookCheckbox, replaceRevealPriceButtonWithActualPriceReverse};
