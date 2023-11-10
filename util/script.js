@@ -4,14 +4,14 @@ import { removeBlurFilter, setOrbBorderToSignalThatUnitIsPublished } from '../we
 import { enableSlider, enablePhysicalBookCheckbox, enableAlreadyReceivedPhysicalBookCheckbox, replaceRevealPriceButtonWithActualPriceReverse } from "../ux/revealPrice.js";
 import { deselectPhysicalBook } from '../ux/deselectPhysicalBook.js';
 import { blurAndPreventScroll } from "../ux/blurAndPreventScrolling.js";
-import { disableOtherCheckBox, resetCheckBoxes } from '../ux/disableOtherCheckBox.js';
+import { selectOtherCheckBox, resetCheckBoxes } from '../ux/selectOtherCheckBox.js';
 import { resetBenefits } from '../ux/modifyBenefits.js';
 import { initiateListenersForSliderAndBookIncluded } from './initiateListenersForSliderAndBookIncluded';
 
 //Get the root style to access css variables
 let root  = document.documentElement;
 
-disableOtherCheckBox();
+selectOtherCheckBox();
 
 //Change color scheme
 const colorSchemes = [
