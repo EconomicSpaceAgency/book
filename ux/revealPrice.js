@@ -22,6 +22,7 @@ function calculateRevealPrice(){
     }
     else{
         let colonisationLevel = getColonizationLevel();
+        console.log('colonisationLevel: ', colonisationLevel);
         let bookSelected = getPhysicalBookIncluded();
 
         if(bookSelected){
