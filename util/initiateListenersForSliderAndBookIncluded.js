@@ -11,9 +11,6 @@ function initiateListenersForSliderAndBookIncluded (){
             if(localStorage.getItem('priceRevealed') == 'true'){
                 revealPriceButton.innerHTML = `Price: ${finalPrice} Matic`;
             }
-            else{
-                console.log('could not find reveal price');
-            }
         }
     });
     includePhysicalBookCheckbox.addEventListener('change', function(){
@@ -22,9 +19,6 @@ function initiateListenersForSliderAndBookIncluded (){
         if(revealPriceButton){
             if(localStorage.getItem('priceRevealed') == 'true'){
                 revealPriceButton.innerHTML = `Price: ${finalPrice} Matic`;
-            }
-            else{
-                console.log('could not find reveal price');
             }
         }
     });
