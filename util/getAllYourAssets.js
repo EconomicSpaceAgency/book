@@ -107,7 +107,7 @@ async function getAllYourAssets(){
                 // fetch element that holds Pinnata / IPFS link:
                 let ipfsBookDownloadLink = document.getElementById('ipfsBookDownloadLink');
                 let pinnataGateway = import.meta.env.VITE_PINATA_GATEWAY;
-                let resourceName = `book_with_cover_${tokenId}.pdf/`;
+                let resourceName = `protocols-for-postcapitalist-expression_digital-edition_${tokenId}.pdf/`;
                 let accessToken = `?pinataGatewayToken=${import.meta.env.VITE_PINATA_ACCESS_TOKEN}`;
                 let downloadURL = pinnataGateway + resourceName + accessToken;
     
