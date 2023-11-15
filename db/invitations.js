@@ -90,6 +90,7 @@ async function getNextInvitation() {
             .eq('used_by_wallet', '0x')
             .eq('invited_by_reservation_id', 0)
             .eq('invited_by_invitation_id', 0)
+            .eq('is_sent', false)
             .limit(1);
         if (error) throw error;
         return data;
