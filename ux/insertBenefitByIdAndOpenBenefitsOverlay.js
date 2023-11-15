@@ -11,10 +11,14 @@ import { updateCopublishers } from "./displayCopublishers.js";
 // import { downloadBook } from "./downloadBook.js";
 import {setInvitationForWallet} from "../db/invitations";
 
-
 // technical debt - code should be modularized!
-const insertBenefitByIdAndOpenBenefitsOverlay = async function(content) {
-    let wallet = localStorage.getItem("wallet");
+const insertBenefitByIdAndOpenBenefitsOverlay = async function(content, details) {
+    let tokenId = details[0].token_id;
+    let walletTest = details[0].wallet;
+    let pbi = details[0].pbi;
+    let price = details[0].price;
+    let invitation = details[0].invitation;
+
     const benefitsOverlay = document.getElementById('benefit1Overlay');
     if(benefitsOverlay){
         benefitsOverlay.style.display = "flex";
@@ -72,7 +76,8 @@ const insertBenefitByIdAndOpenBenefitsOverlay = async function(content) {
 
         if(sendButton){
 
-            let wallet = localStorage.getItem("wallet");
+            let wallet = walletTest;
+            // let wallet = localStorage.getItem("wallet");
             let existingOrder = await getOrderByWallet(wallet);
             let orderUpdateOrPost;
             if(existingOrder){
@@ -93,7 +98,9 @@ const insertBenefitByIdAndOpenBenefitsOverlay = async function(content) {
                 deliveryError.style.display = "none";
                 validateOrders();
                 if(existingOrder){
-                    let updateOrderSuccess = await updateOrderByWallet(deliveryName.value.trim(), deliveryMailing.value.trim(), deliveryPhoneNumber.value.trim(), deliveryContact.value.trim(), localStorage.getItem("wallet"));
+                    console.log('wallet test: ', walletTest);
+                    // let updateOrderSuccess = await updateOrderByWallet(deliveryName.value.trim(), deliveryMailing.value.trim(), deliveryPhoneNumber.value.trim(), deliveryContact.value.trim(), localStorage.getItem("wallet"));
+                    let updateOrderSuccess = await updateOrderByWallet(deliveryName.value.trim(), deliveryMailing.value.trim(), deliveryPhoneNumber.value.trim(), deliveryContact.value.trim(), walletTest);
                     if(updateOrderSuccess == null){
                         sendButton.textContent = "Thank you!";
                     }
@@ -103,7 +110,9 @@ const insertBenefitByIdAndOpenBenefitsOverlay = async function(content) {
                     }
                 }
                 else{
-                    let insertOrderSuccess = await insertOrder(deliveryName.value.trim(), deliveryMailing.value.trim(), deliveryPhoneNumber.value.trim(), deliveryContact.value.trim(), localStorage.getItem("wallet"));
+                    console.log('wallet test: ', walletTest);
+                    // let insertOrderSuccess = await insertOrder(deliveryName.value.trim(), deliveryMailing.value.trim(), deliveryPhoneNumber.value.trim(), deliveryContact.value.trim(), localStorage.getItem("wallet"));
+                    let insertOrderSuccess = await insertOrder(deliveryName.value.trim(), deliveryMailing.value.trim(), deliveryPhoneNumber.value.trim(), deliveryContact.value.trim(), walletTest);
                     if(insertOrderSuccess == null){
                         sendButton.textContent = "Thank you!";
                     }
@@ -129,9 +138,9 @@ const insertBenefitByIdAndOpenBenefitsOverlay = async function(content) {
         if(postPublisherButton){
             let copublisherName = document.getElementById("copublisherName");
             let copublisherUpdateOrPost;
-
+            let wallet = walletTest;
             let existingCopublisher = await getCopublisherByWallet(wallet);
-            // console.log("Is it existing copublisher?", existingCopublisher);
+            console.log("Is it existing copublisher?", existingCopublisher);
             
             if(postPublisherButton){
                 if(existingCopublisher){
@@ -151,6 +160,7 @@ const insertBenefitByIdAndOpenBenefitsOverlay = async function(content) {
                     validateCopublisher();
                     let name = copublisherName.value;
                     if(copublisherUpdateOrPost = "Update"){
+                        let wallet = walletTest;
                         let copublisherUpdateSuccess = await updateCopublisher(wallet, name);
                         if(copublisherUpdateSuccess == null){
                             console.log("copublisherUpdateSuccess", copublisherUpdateSuccess);
@@ -172,13 +182,16 @@ const insertBenefitByIdAndOpenBenefitsOverlay = async function(content) {
 
         // invitations related
         let invitationLinkElement = document.getElementById(`invitation-link1`);
-        let invitation = localStorage.getItem('invitation');
+        invitation
+        // let invitation = localStorage.getItem('invitation');
         // console.log("invitation: ", invitation);
         if(invitation && invitationLinkElement){
             invitationLinkElement.innerHTML = invitation;
         }
         try{
-            let wallet = localStorage.getItem('wallet');
+            console.log('wallet test: ', walletTest);
+            // let wallet = localStorage.getItem('wallet');
+            let wallet = walletTest;
             // Create a URL object
             const parsedUrl = new URL(invitation);
             // Get the 'invitationId' query parameter
@@ -188,7 +201,7 @@ const insertBenefitByIdAndOpenBenefitsOverlay = async function(content) {
         catch(error){
             console.log('setting wallet for invitation silently failed...', error);
         }
-        let tokenId = localStorage.getItem('tokenId');
+        // let tokenId = localStorage.getItem('tokenId');
         // fetch element that holds OpenSea link: 
         let elementContainingOpenSeaLink = document.getElementById('openSeaLink');
 
@@ -214,10 +227,13 @@ const insertBenefitByIdAndOpenBenefitsOverlay = async function(content) {
             dl.href = downloadURL;
         }
 
-        if (localStorage.getItem('pbi') == false || localStorage.getItem('alreadyReceivedPhysicalBook' == 'true')){
-            // console.log('pbi: ', localStorage.getItem('pbi'));
-            modifyBenefits(); 
+        if(pbi == true){
+            modifyBenefits();
         }
+        // if (localStorage.getItem('pbi') == false || localStorage.getItem('alreadyReceivedPhysicalBook' == 'true')){
+        //     // console.log('pbi: ', localStorage.getItem('pbi'));
+        //     modifyBenefits(); 
+        // }
         // enter the discourse button
     }
     let enterTheDiscourseButton = document.getElementById('enterTheDiscourseButton');

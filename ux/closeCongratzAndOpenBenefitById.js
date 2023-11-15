@@ -1,8 +1,12 @@
 import { getBenefitBasedOnId } from "../util/getBenefitBasedOnId.js";
 import { insertBenefitByIdAndOpenBenefitsOverlay } from "./insertBenefitByIdAndOpenBenefitsOverlay";
 import { blurAndPreventScroll, disableBlurAndEnableScroll } from "./blurAndPreventScrolling.js";
+import { getDetailsByWallet } from '../db/details.js'
 
-function closeCongratzAndOpenBenefitById(id) {
+async function closeCongratzAndOpenBenefitById(id) {
+
+    let wallet = localStorage.getItem("wallet");
+    let details = await getDetailsByWallet(wallet);
     
     let congratzOverlayClose = document.getElementById("congratzOverlayClose");
     if(congratzOverlayClose){
@@ -10,7 +14,7 @@ function closeCongratzAndOpenBenefitById(id) {
         disableBlurAndEnableScroll();
     }
     if(id){
-        insertBenefitByIdAndOpenBenefitsOverlay(getBenefitBasedOnId(id-1));
+        insertBenefitByIdAndOpenBenefitsOverlay(getBenefitBasedOnId(id-1), details);
     }
 
 }
