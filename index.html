@@ -97,13 +97,6 @@
             <!-- <button class="aboutOverlayNext" id="aboutOverlayNext3">next →</button> -->
             </div>
         </div>
-        <!-- aboutContent4 -->
-        <!-- <div class="aboutContent" id="aboutContent4" style="display: none;">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi, perspiciatis incidunt adipisci quis saepe velit provident aut reiciendis harum reprehenderit officia commodi voluptatum quisquam nisi dolore tenetur? Iusto, voluptate officia! <br>
-            <br>
-            <br>
-            <button class="aboutOverlayPrev" id="aboutOverlayPrevious4">← previous</button>
-        </div> -->
     </div>
     <!--- priceTierOverlay -->
     <div id="priceTierOverlay" class="overlay" style="display:none">
@@ -218,6 +211,16 @@
             </div>
     </div>
     <!--- benefit1Overlay -->
+    <!-- Non holders overlay -->
+    <div id="nonHolderOverlay" class="overlay">
+        <button id="nonHolderOverlayClose" class="close-btn">X</button>
+            <div id="nonHolderOverlayContent" class="content" style="display:none;">
+            <p>
+                It seems that you are not yet a NFT-holder.
+            </p>
+            </div>
+    </div>
+    <!-- Non holders overlay -->
     <nav id="mainNav">
         <button class="mainNavButton" data-target="navECSA"><span>ECSA</span></button>
         <button class="mainNavButton" data-target="navBook"><span>Book</span></button>
@@ -244,7 +247,8 @@
 
         <nav class="secondaryNavMenu" id="navAbout">
             <button id="aboutButton">instructions</button>
-            <a href="#" onclick="return recoverCongratulationsOverlay();">benefits</a>
+            <a href="https://economic-space-agency.gitbook.io/about-co-publishing-units-of-discourse/discourse-generating-rights-benefits" target="_blank">benefits</a>
+            <a href="#" onclick="return recoverCongratulationsOverlay();">Assets ( NFT holders )</a>
             <a href="https://economic-space-agency.gitbook.io/about-co-publishing-units-of-discourse/faq" target="_blank">FAQ</a>
             <a href="https://frugal.systems/copu/" target="_blank">CoPu</a>
         </nav>

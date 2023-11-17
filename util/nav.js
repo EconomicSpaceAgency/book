@@ -29,6 +29,7 @@ function initiateListeners(){
         let congratzOverlayContent = document.getElementById("congratzOverlayContent");
         let benefitOverlayClose = document.getElementById("benefitOverlayClose");
         let benefitsPackage = document.getElementById("benefitsPackage");
+        let nonHolderOverlayClose = document.getElementById("nonHolderOverlayClose");
     
         aboutButton.addEventListener("click", function () {
             if(aboutOverlay){
@@ -91,7 +92,8 @@ function initiateListeners(){
                 congratzOverlayContent.style.display = "none";
             }
         });
-
+        // non holder overlay
+        
         // adding eventListeners for `benefit{$id}`
         for (let i = 1; i <= 7; i++) {
             let element = document.getElementById(`benefit${i}`);

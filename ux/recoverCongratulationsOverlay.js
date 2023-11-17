@@ -4,6 +4,7 @@ import { checkAndSwitchNetwork } from './checkAndSwitchNetwork';
 import { openCongratzOverlay } from './openCongratzOverlay';
 import { getDetailsByWallet } from '../db/details.js'
 import { displayNFTImageFromOpenSea } from '../web3/ui-interactions/displayNFTFromOpenSea';
+import { displayNonHolderOverlay } from './displayNonHolderOverlay.js';
 
 async function recoverCongratulationsOverlay(){
     let wallets = null;
@@ -40,10 +41,16 @@ async function recoverCongratulationsOverlay(){
     let wallet = localStorage.getItem("wallet");
     let details = await getDetailsByWallet(wallet);
 
-    // if details exist{}
-    openCongratzOverlay();
-    displayNFTImageFromOpenSea(details[0].token_id);
-    // else{... ? window.open('https://economic-space-agency.gitbook.io/about-co-publishing-units-of-discourse/discourse-generating-rights-benefits', '_blank').focus();}
+    if(details[0] == undefined){
+        console.log('not a holder!');
+        displayNonHolderOverlay();
+        // window.open('https://economic-space-agency.gitbook.io/about-co-publishing-units-of-discourse/discourse-generating-rights-benefits', '_blank').focus();
+    }else{
+        openCongratzOverlay();
+        displayNFTImageFromOpenSea(details[0].token_id);
+    }
+
+    
 
 }
 
