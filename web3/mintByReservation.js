@@ -7,6 +7,7 @@ import { openCongratzOverlay } from '../ux/openCongratzOverlay';
 import { revertWaitingForTransactionToInitiate } from '../ux/waitingForTransactionToInitiate';
 import { displayNFTImageFromOpenSea } from './ui-interactions/displayNFTFromOpenSea';
 import {validateChoosePrice} from '../validation/validateChoosePrice.js';
+import { insertIntoDetails } from '../db/details.js';
 const mintByReservation = async (tokenId, reservationId, physicalBookIncluded, choosePrice) => {
 
     const provider = new ethers.BrowserProvider(window.ethereum);
@@ -814,6 +815,18 @@ const mintByReservation = async (tokenId, reservationId, physicalBookIncluded, c
             const coPublisher = await insertCoPublisher(signer.address, tokenId);
           }catch(error) {
             console.log('operations with `copublishers` storage silently failed...');
+          }
+          try {
+            const tokenIdString = localStorage.getItem('tokenId');
+            const tokenId = parseInt(tokenIdString, 10);
+            const wallet = localStorage.getItem('wallet');
+            const pbi = localStorage.getItem('pbi') == 'false' ? false: true;
+            const priceString = localStorage.getItem('price');
+            const price = parseInt(priceString, 10);
+            const invitation = localStorage.getItem('invitation');
+            const copublishingDetails = await insertIntoDetails(tokenId, wallet.toString(), pbi, price, invitation);
+          } catch (error) {
+            console.log('failed ot insert copublishingDetails into database...', error)
           }
           closePriceTierOverlay();
           openCongratzOverlay(physicalBookIncluded);

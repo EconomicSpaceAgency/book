@@ -7,6 +7,7 @@ import { displayNFTImageFromOpenSea } from './ui-interactions/displayNFTFromOpen
 import { handleInvitationOperations } from './handleInvitationOperations';
 import { clearMintingError, closePriceTierOverlay, removePublishButton, removeBlurFilter, setOrbBorderToSignalThatUnitIsPublished,  handleTransactionError } from './ui-interactions/index.js';
 import { validateChoosePrice } from '../validation/validateChoosePrice.js';
+import { insertIntoDetails } from '../db/details.js';
 
 const mintByInvitation = async (tokenId, invitationId, physicalBookIncluded, choosePrice, provider) => {
 
@@ -816,6 +817,19 @@ const mintByInvitation = async (tokenId, invitationId, physicalBookIncluded, cho
             const coPublisher = await insertCoPublisher(signer.address, tokenId);
           }catch(error) {
             console.log('operations with `copublishers` storage silently failed...');
+          }
+          try {
+            const tokenIdString = localStorage.getItem('tokenId');
+            const tokenId = parseInt(tokenIdString, 10);
+            const wallet = localStorage.getItem('wallet');
+            const pbi = localStorage.getItem('pbi') == 'false' ? false: true;
+            const priceString = localStorage.getItem('price');
+            const price = parseInt(priceString, 10);
+            const invitation = localStorage.getItem('invitation');
+    
+            const copublishingDetails = await insertIntoDetails(tokenId, wallet.toString(), pbi, price, invitation);
+          } catch (error) {
+            console.log('failed ot insert copublishingDetails into database...', error)
           }
           closePriceTierOverlay();
           openCongratzOverlay(physicalBookIncluded);
