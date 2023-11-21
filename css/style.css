@@ -1008,6 +1008,9 @@
 .custom-radio1{
     display:none;
 }
+.custom-radio2{
+    display:none;
+}
 
 /* Style the label to position the custom radio and text */
 #selectPhsyicalBookLabel {
@@ -1023,6 +1026,10 @@
     position: relative;
     cursor: pointer;
     display: inline-block;
+}
+
+#gdprAgrement{
+    top: 30% !important;
 }
 
 #alreadyReceivedPhysicalBookChoise{
@@ -1071,6 +1078,19 @@
     background-color: transparent;
 }
 
+.custom-radio2 + span:before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 25%;
+    transform: translateY(-50%);
+    width: 20px;
+    height: 20px;
+    border: 2px solid #cbc7c7;
+    border-radius: 50%;
+    background-color: transparent;
+}
+
 
 /* Create the radio circle when checked */
 /* Was before */
@@ -1079,6 +1099,17 @@
     position: absolute;
     left: 6px;
     top: 50%;
+    transform: translateY(-50%);
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: #dcdcdc;
+}
+.custom-radio2:checked + span:before {
+    content: '';
+    position: absolute;
+    left: 6px;
+    top: 25%;
     transform: translateY(-50%);
     width: 12px;
     height: 12px;
@@ -1492,6 +1523,7 @@ input:focus{
 #aboutContent2{
     overflow-y: auto;
 }
+
 @media (max-width: 680px) {
     #aboutOverlayNext1 {
       margin-top: 0px;/* Your styles for small screens go here */
