@@ -191,7 +191,6 @@ const insertBenefitByIdAndOpenBenefitsOverlay = async function(content, details)
 
         // invitations related
         let invitationLinkElement = document.getElementById(`invitation-link1`);
-        invitation
         // let invitation = localStorage.getItem('invitation');
         // console.log("invitation: ", invitation);
         if(invitation && invitationLinkElement){
