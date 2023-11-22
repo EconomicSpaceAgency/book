@@ -217,6 +217,7 @@ const insertBenefitByIdAndOpenBenefitsOverlay = async function(content, details)
         if(elementContainingOpenSeaLink && tokenId){
             // get token id from local storage so we can generate opensea link
             let url = import.meta.env.VITE_NETWORK == 'sepolia' ? 'testnets.opensea.io' : 'opensea.io'; 
+            console.log('tokenId: ', tokenId);
             const final = `https://${url}/assets/${import.meta.env.VITE_NETWORK}/${import.meta.env.VITE_NFT_CONTRACT_ADDRESS}/${tokenId}`;
             elementContainingOpenSeaLink.innerHTML = final;
         }
