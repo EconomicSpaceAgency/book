@@ -84,7 +84,7 @@ function getBenefitBasedOnId(id){
         <b>6. The print book published by Minor Compositions / Autonomedia (Colchester / New York / Port Watson, 2023)</b>
         <br>
         <br>
-        If you have selected it as an option, your unit includes the delivery of a physical special edition copy of the book delivered to your door. This edition will only enter production after finishing the sale. An estimated delivery time and updates on the process will be communicated inside the <a href="https://discord.gg/MWApYu2MR8" target="_blank"> Discourse Development Discord</a>.
+        If you have selected it as an option, your unit includes the delivery of a physical special edition copy of the book delivered to your door.
         <br>
         <br>
         <label id="alreadyReceivedPhsyicalBookLabel">
