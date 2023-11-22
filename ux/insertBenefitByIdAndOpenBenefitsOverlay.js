@@ -26,6 +26,8 @@ const insertBenefitByIdAndOpenBenefitsOverlay = async function(content, details)
     let price = details[0].price || parseInt(localStorage.getItem('price'));
     let invitation = details[0].invitation || localStorage.getItem('invitation');
 
+    console.log('tokenId: ', tokenId);
+
     const benefitsOverlay = document.getElementById('benefit1Overlay');
     if(benefitsOverlay){
         benefitsOverlay.style.display = "flex";
@@ -203,7 +205,7 @@ const insertBenefitByIdAndOpenBenefitsOverlay = async function(content, details)
             // Create a URL object
             const parsedUrl = new URL(invitation);
             // Get the 'invitationId' query parameter
-            const invitationId = parsedUrl.searchParams.get('invitationId');
+            const invitationId = parsedUrl.searchParams.get('invitationId')
             await setInvitationForWallet(invitationId, wallet.toString());
         }
         catch(error){
