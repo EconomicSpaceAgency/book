@@ -96,7 +96,10 @@ const insertBenefitByIdAndOpenBenefitsOverlay = async function(content, details)
             sendButton.addEventListener("click", async function (event) {
 
                 deliveryError.style.display = "none";
-                validateOrders();
+                let validOrder = validateOrders();
+                if(!validOrder){
+                    return;
+                }
                 if(existingOrder){
                     console.log('wallet test: ', walletTest);
                     // let updateOrderSuccess = await updateOrderByWallet(deliveryName.value.trim(), deliveryMailing.value.trim(), deliveryPhoneNumber.value.trim(), deliveryContact.value.trim(), localStorage.getItem("wallet"));
@@ -140,7 +143,6 @@ const insertBenefitByIdAndOpenBenefitsOverlay = async function(content, details)
             let copublisherUpdateOrPost;
             let wallet = walletTest;
             let existingCopublisher = await getCopublisherByWallet(wallet);
-            console.log("Is it existing copublisher?", existingCopublisher);
             
             if(postPublisherButton){
                 if(existingCopublisher){
