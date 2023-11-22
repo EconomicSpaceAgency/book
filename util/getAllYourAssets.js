@@ -2,7 +2,10 @@ import { copyBenefits } from "../ux/copyBenefits";
 import { downloadBenefits } from "../ux/downloadBenefits";
 import { closeOpenBenefitAndOpenCongratz } from '../ux/closeOpenBenefitAndOpenCongratz';
 import { setInvitationForWallet } from "../db/invitations";
-async function getAllYourAssets(){
+async function getAllYourAssets(details){
+
+    let tokenId = details[0].token_id || parseInt(localStorage.getItem('token_id'));
+
     let congratzOvelay = document.getElementById('congratzOverlay');
     if(congratzOvelay){
         congratzOvelay.style.display = 'none';
@@ -89,12 +92,14 @@ async function getAllYourAssets(){
                     const parsedUrl = new URL(invitation);
                     // Get the 'invitationId' query parameter
                     const invitationId = parsedUrl.searchParams.get('invitationId');
-                    await setInvitationForWallet(invitationId, wallet.toString());
+                    if(invitationId){
+                        await setInvitationForWallet(invitationId, wallet.toString());
+                    }
                 }
                 catch(error){
                     console.log('setting wallet for invitation silently failed...', error);
                 }
-                let tokenId = localStorage.getItem('tokenId');
+                // let tokenId = localStorage.getItem('tokenId');
                 // fetch element that holds OpenSea link: 
                 let elementContainingOpenSeaLink = document.getElementById('openSeaLink');
     

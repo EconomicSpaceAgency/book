@@ -20,7 +20,7 @@ const insertBenefitByIdAndOpenBenefitsOverlay = async function(content, details)
     // let price = details[0].price;
     // let invitation = details[0].invitation;
 
-    let tokenId = details[0].token_id || parseInt(localStorage.getItem('token_id'));
+    let tokenId = details[0].token_id || parseInt(localStorage.getItem('tokenId'));
     let walletTest = details[0].wallet || localStorage.getItem('wallet');
     let pbi = details[0].pbi || localStorage.getItem('pbi') === 'true';
     let price = details[0].price || parseInt(localStorage.getItem('price'));

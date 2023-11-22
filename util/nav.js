@@ -6,6 +6,7 @@ import { blurAndPreventScroll, disableBlurAndEnableScroll } from "../ux/blurAndP
 import { displayCopublishers } from '../ux/displayCopublishers';
 import { closeSubmenus } from '../ux/closeSubmenus.js';
 import { setEconomicMediaGlowListeners } from "../ux/economicMediaGlow.js";
+import { getDetailsByWallet } from '../db/details.js'
 
 
 function initiateListeners(){
@@ -110,8 +111,10 @@ function initiateListeners(){
         }
         // adding eventListener for `benefisPackage`
         if(benefitsPackage){
-            benefitsPackage.addEventListener("click", function (event) {
-                getAllYourAssets();
+            benefitsPackage.addEventListener("click", async function (event) {
+                let wallet = localStorage.getItem("wallet");
+                let details = await getDetailsByWallet(wallet);
+                getAllYourAssets(details);
             })
         }
     });    

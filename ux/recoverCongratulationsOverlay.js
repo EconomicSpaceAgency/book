@@ -41,16 +41,20 @@ async function recoverCongratulationsOverlay(){
     let wallet = localStorage.getItem("wallet");
     let details = await getDetailsByWallet(wallet);
 
-    if(details[0] == undefined){
-        console.log('not a holder!');
+    // if we cannot find the details in database;
+
+    let tokenId = parseInt(localStorage.getItem('tokenId'));
+    let pbi = localStorage.getItem('pbi') === 'true';
+    let price = localStorage.getItem('price');
+    let invitation = localStorage.getItem('invitation');
+
+    if(details[0] == undefined || tokenId == undefined){
         displayNonHolderOverlay();
         // window.open('https://economic-space-agency.gitbook.io/about-co-publishing-units-of-discourse/discourse-generating-rights-benefits', '_blank').focus();
     }else{
         openCongratzOverlay();
         displayNFTImageFromOpenSea(details[0].token_id);
     }
-
-    
 
 }
 
