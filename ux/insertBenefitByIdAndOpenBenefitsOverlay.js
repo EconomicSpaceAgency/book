@@ -205,7 +205,8 @@ const insertBenefitByIdAndOpenBenefitsOverlay = async function(content, details)
             // Create a URL object
             const parsedUrl = new URL(invitation);
             // Get the 'invitationId' query parameter
-            const invitationId = parsedUrl.searchParams.get('invitationId')
+            const invitationId = parsedUrl.searchParams.get('invitationId');
+            console.log('invitationId: ', invitationId);
             if(invitationId){
                 await setInvitationForWallet(invitationId, wallet.toString());
             }
