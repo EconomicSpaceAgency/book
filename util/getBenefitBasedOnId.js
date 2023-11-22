@@ -84,7 +84,13 @@ function getBenefitBasedOnId(id){
         <b>6. The print book published by Minor Compositions / Autonomedia (Colchester / New York / Port Watson, 2023)</b>
         <br>
         <br>
-        If you have selected it as an option, your unit includes the delivery of a physical special edition copy of the book delivered to your door. This edition will only enter production after finishing the sale. An estimated delivery time and updates on the process will be communicated inside the <a href="https://discord.gg/MWApYu2MR8" target="_blank"> Discourse Development Discord</a>.
+        If you have selected it as an option, your unit includes the delivery of a physical special edition copy of the book delivered to your door.
+        <br>
+        <br>
+        <label id="alreadyReceivedPhsyicalBookLabel">
+        <input type="checkbox" name="tier" value="0.0001" class="custom-radio2" id="gdprAgreement">
+        <span id="alreadyReceivedPhysicalBookChoise"></span> I agree to the collection and use of my mailing address for the purpose of receiving a print copy of the book.
+        </label>
         <br>
         <br>
         Please leave your name and preferred delivery address here:
@@ -105,7 +111,8 @@ function getBenefitBasedOnId(id){
         Contact
         <br>
         <input type="text" placeholder="contact@gmail.com / @telegram" spellcheck="false" id="contact">
-        <p class="detailsError" id="detailsError">Please fill all the fields</p>
+        <p class="detailsError" id="detailsError">Please fill all the fields and provide consent about data</p>
+        <br>
         <br>
         <button class="postDeliveryDetails" id="postDeliveryDetails">Send ➹</button>
         <br>
