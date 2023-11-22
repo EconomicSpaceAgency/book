@@ -13,11 +13,18 @@ import {setInvitationForWallet} from "../db/invitations";
 
 // technical debt - code should be modularized!
 const insertBenefitByIdAndOpenBenefitsOverlay = async function(content, details) {
-    let tokenId = details[0].token_id;
-    let walletTest = details[0].wallet;
-    let pbi = details[0].pbi;
-    let price = details[0].price;
-    let invitation = details[0].invitation;
+    // was before
+    // let tokenId = details[0].token_id;
+    // let walletTest = details[0].wallet;
+    // let pbi = details[0].pbi;
+    // let price = details[0].price;
+    // let invitation = details[0].invitation;
+
+    let tokenId = details[0].token_id || parseInt(localStorage.getItem('token_id'));
+    let walletTest = details[0].wallet || localStorage.getItem('wallet');
+    let pbi = details[0].pbi || localStorage.getItem('pbi') === 'true';
+    let price = details[0].price || parseInt(localStorage.getItem('price'));
+    let invitation = details[0].invitation || localStorage.getItem('invitation');
 
     const benefitsOverlay = document.getElementById('benefit1Overlay');
     if(benefitsOverlay){
