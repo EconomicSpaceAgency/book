@@ -23,6 +23,7 @@ async function addNetwork() {
       } catch (addError) {
         // Handle the error
         console.error('Error adding Polygon network', addError);
+        throw new Error('It seems that you declined to add Polygon network');
       }
     } else {
       console.log('MetaMask is not installed. Please consider installing it: https://metamask.io/download.html');

@@ -13,11 +13,19 @@ import {setInvitationForWallet} from "../db/invitations";
 
 // technical debt - code should be modularized!
 const insertBenefitByIdAndOpenBenefitsOverlay = async function(content, details) {
-    let tokenId = details[0].token_id;
-    let walletTest = details[0].wallet;
-    let pbi = details[0].pbi;
-    let price = details[0].price;
-    let invitation = details[0].invitation;
+    // was before
+    // let tokenId = details[0].token_id;
+    // let walletTest = details[0].wallet;
+    // let pbi = details[0].pbi;
+    // let price = details[0].price;
+    // let invitation = details[0].invitation;
+
+    let tokenId = details[0].token_id || parseInt(localStorage.getItem('tokenId'));
+    let walletTest = details[0].wallet || localStorage.getItem('wallet');
+    let pbi = details[0].pbi || localStorage.getItem('pbi') === 'true';
+    let price = details[0].price || parseInt(localStorage.getItem('price'));
+    let invitation = details[0].invitation || localStorage.getItem('invitation');
+
 
     const benefitsOverlay = document.getElementById('benefit1Overlay');
     if(benefitsOverlay){
@@ -101,7 +109,6 @@ const insertBenefitByIdAndOpenBenefitsOverlay = async function(content, details)
                     return;
                 }
                 if(existingOrder){
-                    console.log('wallet test: ', walletTest);
                     // let updateOrderSuccess = await updateOrderByWallet(deliveryName.value.trim(), deliveryMailing.value.trim(), deliveryPhoneNumber.value.trim(), deliveryContact.value.trim(), localStorage.getItem("wallet"));
                     let updateOrderSuccess = await updateOrderByWallet(deliveryName.value.trim(), deliveryMailing.value.trim(), deliveryPhoneNumber.value.trim(), deliveryContact.value.trim(), walletTest);
                     if(updateOrderSuccess == null){
@@ -113,7 +120,6 @@ const insertBenefitByIdAndOpenBenefitsOverlay = async function(content, details)
                     }
                 }
                 else{
-                    console.log('wallet test: ', walletTest);
                     // let insertOrderSuccess = await insertOrder(deliveryName.value.trim(), deliveryMailing.value.trim(), deliveryPhoneNumber.value.trim(), deliveryContact.value.trim(), localStorage.getItem("wallet"));
                     let insertOrderSuccess = await insertOrder(deliveryName.value.trim(), deliveryMailing.value.trim(), deliveryPhoneNumber.value.trim(), deliveryContact.value.trim(), walletTest);
                     if(insertOrderSuccess == null){
@@ -184,21 +190,22 @@ const insertBenefitByIdAndOpenBenefitsOverlay = async function(content, details)
 
         // invitations related
         let invitationLinkElement = document.getElementById(`invitation-link1`);
-        invitation
         // let invitation = localStorage.getItem('invitation');
         // console.log("invitation: ", invitation);
         if(invitation && invitationLinkElement){
             invitationLinkElement.innerHTML = invitation;
         }
         try{
-            console.log('wallet test: ', walletTest);
             // let wallet = localStorage.getItem('wallet');
             let wallet = walletTest;
             // Create a URL object
             const parsedUrl = new URL(invitation);
             // Get the 'invitationId' query parameter
             const invitationId = parsedUrl.searchParams.get('invitationId');
-            await setInvitationForWallet(invitationId, wallet.toString());
+            if(invitationId){
+                await setInvitationForWallet(invitationId, wallet.toString());
+            }
+            
         }
         catch(error){
             console.log('setting wallet for invitation silently failed...', error);
