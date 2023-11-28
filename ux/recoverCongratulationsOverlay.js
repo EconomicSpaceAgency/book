@@ -48,7 +48,7 @@ async function recoverCongratulationsOverlay(){
     let price = localStorage.getItem('price');
     let invitation = localStorage.getItem('invitation');
 
-    if(details[0] == undefined || tokenId == undefined){
+    if(details[0] == undefined){
         let aboutOverlay = document.getElementById('aboutOverlay');
         let aboutOverlayCloseButton = document.getElementById('aboutOverlayClose');
         let aboutContent1 = document.getElementById('aboutContent1');
