@@ -49,9 +49,51 @@ async function recoverCongratulationsOverlay(){
     let invitation = localStorage.getItem('invitation');
 
     if(details[0] == undefined || tokenId == undefined){
+        let aboutOverlay = document.getElementById('aboutOverlay');
+        console.log('aboutOverlay', aboutOverlay);
+        let aboutOverlayCloseButton = document.getElementById('aboutOverlayClose');
+        console.log('aboutOverlayCloseButton', aboutOverlayCloseButton);
+        let aboutContent1 = document.getElementById('aboutContent1');
+        let aboutContent2 = document.getElementById('aboutContent2');
+        let aboutContent3 = document.getElementById('aboutContent3');
+        if(aboutOverlay){
+            if(aboutContent1.style.display == 'block' || aboutContent2.style.display == 'block' || aboutContent3.style.display == 'block' || aboutOverlay.style.display == 'flex'){
+                console.log('about overlay is open!');
+                if(aboutOverlayCloseButton){
+                    aboutOverlayCloseButton.click();
+                }
+            }
+            else{
+                console.log('it seems that about overlay is closed!');
+                console.log('aboutContent1', aboutContent1);
+                console.log('aboutContent2', aboutContent1);
+                console.log('aboutContent3', aboutContent1);
+            }
+        }
         displayNonHolderOverlay();
         // window.open('https://economic-space-agency.gitbook.io/about-co-publishing-units-of-discourse/discourse-generating-rights-benefits', '_blank').focus();
     }else{
+        let aboutOverlay = document.getElementById('aboutOverlay');
+        console.log('aboutOverlay', aboutOverlay);
+        let aboutOverlayCloseButton = document.getElementById('aboutOverlayClose');
+        console.log('aboutOverlayCloseButton', aboutOverlayCloseButton);
+        let aboutContent1 = document.getElementById('aboutContent1');
+        let aboutContent2 = document.getElementById('aboutContent2');
+        let aboutContent3 = document.getElementById('aboutContent3');
+        if(aboutOverlay){
+            if(aboutContent1.style.display == 'block' || aboutContent2.style.display == 'block' || aboutContent3.style.display == 'block' || aboutOverlay.style.display == 'flex'){
+                console.log('about overlay is open!');
+                if(aboutOverlayCloseButton){
+                    aboutOverlayCloseButton.click();
+                }
+            }
+            else{
+                console.log('it seems that about overlay is closed!');
+                console.log('aboutContent1', aboutContent1);
+                console.log('aboutContent2', aboutContent1);
+                console.log('aboutContent3', aboutContent1);
+            }
+        }
         openCongratzOverlay();
         displayNFTImageFromOpenSea(details[0].token_id);
     }

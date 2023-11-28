@@ -37,7 +37,7 @@ const checkAndSwitchNetwork = async (provider) => {
                     }
                     catch(error){
                         console.log('stuff should happen here');
-                        throw new Error(`It seems you declined to add network}`);
+                        throw new Error(`It seems you declined to add network where where postcapitalist discourse resides`);
                     }
                 }
                 else{
