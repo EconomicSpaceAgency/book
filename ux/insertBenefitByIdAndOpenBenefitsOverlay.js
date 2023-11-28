@@ -26,7 +26,6 @@ const insertBenefitByIdAndOpenBenefitsOverlay = async function(content, details)
     let price = details[0].price || parseInt(localStorage.getItem('price'));
     let invitation = details[0].invitation || localStorage.getItem('invitation');
 
-    console.log('tokenId: ', tokenId);
 
     const benefitsOverlay = document.getElementById('benefit1Overlay');
     if(benefitsOverlay){
@@ -110,7 +109,6 @@ const insertBenefitByIdAndOpenBenefitsOverlay = async function(content, details)
                     return;
                 }
                 if(existingOrder){
-                    console.log('wallet test: ', walletTest);
                     // let updateOrderSuccess = await updateOrderByWallet(deliveryName.value.trim(), deliveryMailing.value.trim(), deliveryPhoneNumber.value.trim(), deliveryContact.value.trim(), localStorage.getItem("wallet"));
                     let updateOrderSuccess = await updateOrderByWallet(deliveryName.value.trim(), deliveryMailing.value.trim(), deliveryPhoneNumber.value.trim(), deliveryContact.value.trim(), walletTest);
                     if(updateOrderSuccess == null){
@@ -122,7 +120,6 @@ const insertBenefitByIdAndOpenBenefitsOverlay = async function(content, details)
                     }
                 }
                 else{
-                    console.log('wallet test: ', walletTest);
                     // let insertOrderSuccess = await insertOrder(deliveryName.value.trim(), deliveryMailing.value.trim(), deliveryPhoneNumber.value.trim(), deliveryContact.value.trim(), localStorage.getItem("wallet"));
                     let insertOrderSuccess = await insertOrder(deliveryName.value.trim(), deliveryMailing.value.trim(), deliveryPhoneNumber.value.trim(), deliveryContact.value.trim(), walletTest);
                     if(insertOrderSuccess == null){
@@ -199,14 +196,12 @@ const insertBenefitByIdAndOpenBenefitsOverlay = async function(content, details)
             invitationLinkElement.innerHTML = invitation;
         }
         try{
-            console.log('wallet test: ', walletTest);
             // let wallet = localStorage.getItem('wallet');
             let wallet = walletTest;
             // Create a URL object
             const parsedUrl = new URL(invitation);
             // Get the 'invitationId' query parameter
             const invitationId = parsedUrl.searchParams.get('invitationId');
-            console.log('invitationId: ', invitationId);
             if(invitationId){
                 await setInvitationForWallet(invitationId, wallet.toString());
             }
@@ -222,7 +217,6 @@ const insertBenefitByIdAndOpenBenefitsOverlay = async function(content, details)
         if(elementContainingOpenSeaLink && tokenId){
             // get token id from local storage so we can generate opensea link
             let url = import.meta.env.VITE_NETWORK == 'sepolia' ? 'testnets.opensea.io' : 'opensea.io'; 
-            console.log('tokenId: ', tokenId);
             const final = `https://${url}/assets/${import.meta.env.VITE_NETWORK}/${import.meta.env.VITE_NFT_CONTRACT_ADDRESS}/${tokenId}`;
             elementContainingOpenSeaLink.innerHTML = final;
         }
