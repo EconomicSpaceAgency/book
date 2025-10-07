@@ -791,9 +791,8 @@
     }
 
     .available p{
-        filter: blur(4px);
         opacity: 1;
-        transition: filter 1s, opacity 1s;
+        transition: opacity 1s;
     }
 
     .available p:hover{
@@ -802,9 +801,8 @@
     }
 
     .available > h5{
-        filter: blur(4px);
         opacity: 1;
-        transition: filter 1s, opacity 1s;
+        transition: opacity 1s;
     }
 
     .available > h5:hover{
