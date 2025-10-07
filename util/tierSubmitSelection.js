@@ -74,6 +74,7 @@ async function submitSelection() {
                     displayError(reservationError);
                 }
             }
+            /*
             else if (invitationsActive && invitationId) {
                 let invitationError;
                 if(reserved && reservationsActive){
@@ -87,6 +88,7 @@ async function submitSelection() {
                     displayError(invitationError);
                 }
             }
+            */
             else{
                 let withoutReservationAndInvitationError;
                 if(reservationsActive && reservationId){
