@@ -248,7 +248,7 @@ const insertBenefitByIdAndOpenBenefitsOverlay = async function(content, details)
     let enterTheDiscourseButton = document.getElementById('enterTheDiscourseButton');
     if(enterTheDiscourseButton){
         enterTheDiscourseButton.addEventListener('click', function(){
-            window.open('https://discord.gg/MWApYu2MR8', '_blank').focus();
+            window.open('https://t.me/economicspaceagency', '_blank').focus();
         });
     }
 
