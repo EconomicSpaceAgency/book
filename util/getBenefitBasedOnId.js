@@ -5,7 +5,7 @@ function getBenefitBasedOnId(id){
         <b>1. Creditation as a Co-Publisher</b>
         <br>
         <br>
-        Co-publishing the unit you have chosen transforms this book-commodity into an open access publication. As a thank you, either your wallet address or your chosen name will be listed as a Co-Publisher of the book on this website and in the next PDF versions of the book.
+        Co-publishing the unit you have chosen transforms this book-commodity into an open access publication. As a thank you, either your wallet address or your chosen name will be listed as a Co-Publisher of the book on this website.
         <br>
         <br>
         To have your Co-publisher credit appear as a human readable chosen name (and not your wallet address), please write that name here:
@@ -30,46 +30,7 @@ function getBenefitBasedOnId(id){
         </details>
         </p>`,
 
-        `
-        <p>
-        <b>3. Participation in the discourse development and in-person meetings</b>
-        <br>
-        <br>
-        Your unit grants you access to the <a href="https://discord.gg/MWApYu2MR8" target="_blank"> Discourse Development Discord</a> , a community where unit holders will shape the discourse of the book by exchanging ideas, sharing insights and engaging in dialogue. 
-        <details>
-        <summary>Read more</summary>
-        As part of the activities of the node, the ECSA team will curate public discussions with interesting guests as well as facilitate Q&A with the authors. The community that forms in the discord will shape its own future, with the possibility of becoming a DAO that holds a portion of the sale’s funds, or even becoming a node in the emerging ECSA economic network!<br>
-        </p>
-        </details>
-        `,
-
-        `
-        <p>
-        <b>4. Network curation </b>
-        <br>
-        <br>
-        Your unit includes a unique code-link that enables up to 5 friends to co-publish themselves a new unit of discourse. We hope you will choose friends who you believe will be interested in the postcapitalist discourse. and whose participation will increase its value. But be quick, there are only 601 units available! 
-        <br>
-        <details>
-        <summary>Read more</summary>
-        Those you invite will gain all the rights of the unit holder once the unit is acquired, including their own invite link to share with their friends. The aim is to turn the process of co-publishing this book-object into a network: a living discourse on postcapitalist expression.
-        </details>
-        <br>
-        <br>
-        Your shareable invite-link is here, it can be used by max 5 different people to acquire one unit each:
-        <br>
-        </p>
-        <div class="invitation-container-minimal">
-        <p class="invitation-link" id="invitation-link1">
-        https://postcapitalist.agency/?invitationId=HWjaYEr24AcMLzdhN4ycnKnhPvtRn4QNJKMuzu4BXexBHm6tsKmCQCUxqBudsxmK
-        </p>
-        </div>
-        <div class="copyAndInvitationButtons">
-            <button class="copy-button" id="copyButton">Copy ❑</button>
-            <button class="download-button" id="downloadButton">Download ↓</button>
-        </div>`,
-
-        `<b>5. The book PDF with a unique generative cover </b>
+        `<b>3. The book PDF with a unique generative cover </b>
         <br>
         <br>
         The unit gives you the right to download a PDF copy of the book with a unique generative cover.
@@ -81,7 +42,7 @@ function getBenefitBasedOnId(id){
         `,
         `
         <p>
-        <b>6. The print book published by Minor Compositions / Autonomedia (Colchester / New York / Port Watson, 2023)</b>
+        <b>4. The print book published by Minor Compositions / Autonomedia (Colchester / New York / Port Watson, 2023)</b>
         <br>
         <br>
         If you have selected it as an option, your unit includes the delivery of a physical special edition copy of the book delivered to your door.
