@@ -5,7 +5,7 @@ function getBenefitBasedOnId(id){
         <b>1. Creditation as a Co-Publisher</b>
         <br>
         <br>
-        Co-publishing the unit you have chosen transforms this book-commodity into an open access publication. As a thank you, either your wallet address or your chosen name will be listed as a Co-Publisher of the book on this website.
+        With your contribution we can keep the book as an open access publication that anybody can read, listen and circulate! As a thank you, either your wallet address or your chosen name will be listed as a Co-Publisher of the book on this website.
         <br>
         <br>
         To have your Co-publisher credit appear as a human readable chosen name (and not your wallet address), please write that name here:
