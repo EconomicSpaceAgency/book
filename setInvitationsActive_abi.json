@@ -1,0 +1,13 @@
+{
+  "inputs": [
+    {
+      "internalType": "bool",
+      "name": "_status",
+      "type": "bool"
+    }
+  ],
+  "name": "setInvitationsActive",
+  "outputs": [],
+  "stateMutability": "nonpayable",
+  "type": "function"
+}
