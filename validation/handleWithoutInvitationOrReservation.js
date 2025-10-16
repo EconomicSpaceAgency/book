@@ -24,9 +24,11 @@ async function handleWithoutInvitationOrReservation(address, reservationsActive,
             return true;
         }
     }
+    /*
     if(invitationsActive){
         return "Invitations are still active!";
     }
+    */
     else{
         let walletHasEnoughFunds = await enoughFunds(address, choosenPrice);
         if(!walletHasEnoughFunds){

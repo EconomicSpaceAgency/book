@@ -791,25 +791,21 @@
     }
 
     .available p{
-        filter: blur(4px);
-        opacity: 1;
-        transition: filter 1s, opacity 1s;
+        opacity: 0.7;
+        transition: opacity 1s;
     }
 
     .available p:hover{
         opacity: 1;
-        filter: blur(0px);
     }
 
     .available > h5{
-        filter: blur(4px);
-        opacity: 1;
-        transition: filter 1s, opacity 1s;
+        opacity: 0.7;
+        transition: opacity 1s;
     }
 
     .available > h5:hover{
         opacity: 1;
-        filter: blur(0px);
     }
 
     .unitPublishButton{
