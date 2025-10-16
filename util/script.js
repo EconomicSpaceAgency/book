@@ -475,12 +475,6 @@ fetch('glossary.json')
 
       unitsPublishButtons[p] = document.createElement('button');
       const bool = await isTokenMinted(p+1, mintedTokens);
-      // Simplest: ensure 'available' reflects only not-minted units
-      if(!bool){
-        units[p].classList.add('available');
-      } else {
-        units[p].classList.remove('available');
-      }
       if(!bool){
         unitsPublishButtons[p].classList.add('unitPublishButton');
       }
