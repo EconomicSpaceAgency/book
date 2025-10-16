@@ -6,7 +6,7 @@ import { enoughFunds } from "./enoughFunds.js";
 async function handleInvitations(address, invitationId, tokenId, physicalBookIncluded, chosenPrice, provider, reservationsActive) {
     let hasMintedR = await hasMinted(address);
     if(hasMintedR){
-        return "You have already minted an NFT from this collection.";
+        return "You have already co-published a unit. We kindly suggest that people only co-publish one unit per person.";
     }
     if (invitationId) {
         let validInvitation = await isInvitationValid(invitationId);

@@ -20,7 +20,7 @@ function getBenefitBasedOnId(id){
         `,
         `
         <p>
-        <b>2. Access to the ECSA token multistake whitelist</b>
+        <b>2. Access to the ECSA token whitelist</b>
         <br>
         <br>
         Your unit grants you access to the ECSA token whitelist.
@@ -103,7 +103,7 @@ function getBenefitBasedOnId(id){
 //     `,
 //     `
 //     <p>
-//     <b>2. Access to the ECSA token multistake whitelist</b>
+//     <b>2. Access to the ECSA token whitelist</b>
 //     <br>
 //     <br>
 //     Your unit grants you access to the ECSA token presale whitelist (target date: TBC). A certain number of ECSA tokens – which are the project’s capital market facing governance tokens – will be allocated to an option pool divided among all the unit holders. The unit thus functions as an early access right to ECSA token multistake. Please follow our messaging at the <a href="https://t.me/economicspaceagency" target="_blank"> ECSA Telegram </a>, <a href="https://twitter.com/ecospaceagency" target="_blank"> ECSA Twitter </a>, and <a href="https://discord.gg/MWApYu2MR8" target="_blank"> Discourse Development Discord. </a>
