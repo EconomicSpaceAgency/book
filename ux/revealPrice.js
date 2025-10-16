@@ -86,7 +86,7 @@ function replaceRevealPriceButtonWithActualPrice(revealedPrice){
     if(revealPriceDiv){
         if(revealPriceButton){
             revealPriceButton.className = 'revealedPrice';
-            revealPriceButton.innerHTML = `Price: ${revealedPrice} Matic`;
+            revealPriceButton.innerHTML = `Price: ${revealedPrice} POL`;
             localStorage.setItem('priceRevealed', true);
         }
     }

@@ -1539,7 +1539,12 @@ input:focus{
 #tiersErrorMessage{
     display: none; 
     margin-top:20px;
-    padding-left: 0 !important;
+    padding: 0.5em 1em;
+    background-color: var(--c4);
+    color: var(--bg);
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
 }
 #copublishButtonDiv{
     margin-top:1em;
